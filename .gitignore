@@ -1,0 +1,8 @@
+LICENSE
+RestaurantApp.code-workspace
+api/node_modules
+client/node_modules
+client/public
+client/src/App.test.js
+client/src/serviceWorker.js
+client/src/setupTests.js
