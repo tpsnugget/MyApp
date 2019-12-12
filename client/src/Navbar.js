@@ -15,7 +15,7 @@ class Navbar extends Component {
          </div>
          <div className="Navbar-right">
             <Link className="Navbar-right-links">Login</Link>
-            <Link className="Navbar-right-links">Signup</Link>
+            <Link to="/user" className="Navbar-right-links">Signup</Link>
          </div>
          </div >
       )
