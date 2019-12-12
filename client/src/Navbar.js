@@ -14,7 +14,7 @@ class Navbar extends Component {
                {isLoggedIn ? <span>You are logged in as: </span> : <span>Please Login or Signup</span>}
          </div>
          <div className="Navbar-right">
-            <Link className="Navbar-right-links">Login</Link>
+            <Link to="/login" className="Navbar-right-links">Login</Link>
             <Link to="/user" className="Navbar-right-links">Signup</Link>
          </div>
          </div >

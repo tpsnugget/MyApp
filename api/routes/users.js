@@ -2,18 +2,36 @@ var express = require('express'),
   mongoose = require("mongoose")
 var router = express.Router();
 
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}
+// const options = {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// }
 
-mongoose.connect("mongodb://localhost:27017/myUsersDB", options)
+// mongoose.connect("mongodb://localhost:27017/myUsersDB", options)
 
 const userSchema = new mongoose.Schema({
-  first: String,
-  last: String,
-  username: String,
-  password: String
+  first: {
+    type: String,
+    required: true
+  },
+  last: {
+    type: String,
+    required: true
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
 })
 
 const User = mongoose.model("User", userSchema)

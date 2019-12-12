@@ -10,6 +10,7 @@ class User extends Component {
          first: "",
          last: "",
          username: "",
+         email: "",
          password: "",
          password2: ""
       }
@@ -29,6 +30,7 @@ class User extends Component {
          first: this.state.first,
          last: this.state.last,
          username: this.state.username.toLowerCase(),
+         email: this.state.email.toLowerCase(),
          password: this.state.password
       })
       .then( (response) => {
@@ -63,6 +65,12 @@ class User extends Component {
                   <label>
                      Username:
                   <input type="text" name="username" onChange={this.handleChange} />
+                  </label>
+               </div>
+               <div className="User-div">
+                  <label>
+                     Email:
+                  <input type="email" name="email" onChange={this.handleChange} />
                   </label>
                </div>
                <div className="User-div">
