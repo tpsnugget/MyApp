@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
 import Navbar from "./Navbar"
 import Landing from "./Landing"
+import New from "./New"
+import User from "./User"
 import './App.css';
 
 class App extends Component {
@@ -9,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = ({
-      isLoggedIn: false
+      isLoggedIn: true
     })
   }
 
@@ -21,8 +23,14 @@ class App extends Component {
       <div className="App">
       <Navbar isLoggedIn={isLoggedIn}/>
         <Switch>
-          <Route>
+          <Route exact path="/">
             {isLoggedIn && <Landing />}
+          </Route>
+          <Route exact path="/new">
+            {isLoggedIn && <New />}
+          </Route>
+          <Route exact path="/user">
+            {isLoggedIn && <User isLoggedIn={isLoggedIn}/>}
           </Route>
         </Switch>
       </div>
