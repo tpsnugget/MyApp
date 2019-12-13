@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   updateLoggedInName(e){
-    console.log("updateLoggedInName: ", e)
     this.setState({
       isLoggedIn: true,
       loggedInName: e
@@ -34,7 +33,7 @@ class App extends Component {
       <div className="App">
       <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName}/>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/landing">
             {isLoggedIn && <Landing />}
           </Route>
           <Route exact path="/new">

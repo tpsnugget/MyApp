@@ -6,17 +6,25 @@ class Navbar extends Component {
 
    render() {
 
+      const loginSignup =
+         <div className="Navbar-right">
+            <Link to="/login" className="Navbar-right-links">Login</Link>
+            <Link to="/user" className="Navbar-right-links">Signup</Link>
+         </div>
+
+      const logout =
+         <div className="Navbar-right">
+            <Link to="/login" className="Navbar-right-links">Logout</Link>
+         </div>
+
       const { isLoggedIn, loggedInName } = this.props
 
       return (
          <div className="Navbar">
             <div className="Navbar-left">
                {isLoggedIn ? <span>You are logged in as: {loggedInName} </span> : <span>Please Login or Signup</span>}
-         </div>
-         <div className="Navbar-right">
-            <Link to="/login" className="Navbar-right-links">Login</Link>
-            <Link to="/user" className="Navbar-right-links">Signup</Link>
-         </div>
+            </div>
+            {isLoggedIn ? logout : loginSignup}
          </div >
       )
    }
