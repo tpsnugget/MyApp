@@ -4,6 +4,7 @@ import Navbar from "./Navbar"
 import Landing from "./Landing"
 import New from "./New"
 import User from "./User"
+import Login from "./Login"
 import './App.css';
 
 class App extends Component {
@@ -31,6 +32,9 @@ class App extends Component {
           </Route>
           <Route exact path="/user">
             {isLoggedIn && <User isLoggedIn={isLoggedIn}/>}
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
         </Switch>
       </div>
