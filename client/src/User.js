@@ -31,68 +31,89 @@ class User extends Component {
 
    handleSubmit(e) {
       e.preventDefault()
-      axios.post("http://localhost:9000/users", {
-         first: this.state.first,
-         last: this.state.last,
-         username: this.state.username.toLowerCase(),
-         email: this.state.email.toLowerCase(),
-         password: this.state.password
-      })
-         .then((response) => {
-            console.log("User Component response: ", response)
-            if (response.data._id) {
-               this.setState({
-                  snackBarOpen: true,
-                  msg: "Signup Successful"
-               })
-               setTimeout(() => {
-                  this.setState({
-                     snackBarOpen: false,
-                     msg: "",
-                     goodLogin: true
-                  })
-               }, 2000);
-            }
-            else if (response.data.name === "MongoError") {
-               this.setState({
-                  snackBarOpen: true,
-                  msg: "Those login credentials are already in use"
-               })
-               setTimeout(() => {
-                  this.setState({
-                     first: "",
-                     last: "",
-                     username: "",
-                     email: "",
-                     password: "",
-                     password2: "",
-                     snackBarOpen: false,
-                     msg: ""
-                  })
-               }, 2000);
-            }
-            else if (response.data._message === "User validation failed") {
-               this.setState({
-                  snackBarOpen: true,
-                  msg: "An error occurred during signup"
-               })
-               setTimeout(() => {
-                  this.setState({
-                     first: "",
-                     last: "",
-                     username: "",
-                     email: "",
-                     password: "",
-                     password2: "",
-                     snackBarOpen: false,
-                     msg: ""
-                  })
-               }, 2000);
-            }
+      if (this.state.password === this.state.password2) {
+         axios.post("http://localhost:9000/users", {
+            first: this.state.first,
+            last: this.state.last,
+            username: this.state.username.toLowerCase(),
+            email: this.state.email.toLowerCase(),
+            password: this.state.password
          })
-         .catch((error) => {
-            console.error("User Component error: ", error)
+            .then((response) => {
+               console.log("User Component response: ", response)
+               if (response.data._id) {
+                  this.setState({
+                     snackBarOpen: true,
+                     msg: "Signup Successful"
+                  })
+                  setTimeout(() => {
+                     this.setState({
+                        snackBarOpen: false,
+                        msg: "",
+                        goodLogin: true
+                     })
+                  }, 2000);
+               }
+               else if (response.data.name === "MongoError") {
+                  this.setState({
+                     snackBarOpen: true,
+                     msg: "Those login credentials are already in use"
+                  })
+                  setTimeout(() => {
+                     this.setState({
+                        first: "",
+                        last: "",
+                        username: "",
+                        email: "",
+                        password: "",
+                        password2: "",
+                        snackBarOpen: false,
+                        msg: ""
+                     })
+                  }, 2000);
+               }
+               else if (response.data._message === "User validation failed") {
+                  this.setState({
+                     snackBarOpen: true,
+                     msg: "An error occurred during signup"
+                  })
+                  setTimeout(() => {
+                     this.setState({
+                        first: "",
+                        last: "",
+                        username: "",
+                        email: "",
+                        password: "",
+                        password2: "",
+                        snackBarOpen: false,
+                        msg: ""
+                     })
+                  }, 2000);
+               }
+            })
+            .catch((error) => {
+               console.error("User Component error: ", error)
+            })
+      }
+      else {
+         this.setState({
+            snackBarOpen: true,
+            msg: "Passwords entered are not identical"
          })
+         setTimeout(() => {
+            this.setState({
+               first: "",
+               last: "",
+               username: "",
+               email: "",
+               password: "",
+               password2: "",
+               snackBarOpen: false,
+               msg: ""
+            })
+         }, 2000);
+      }
+
    }
 
    render() {
