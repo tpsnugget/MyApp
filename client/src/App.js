@@ -12,7 +12,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = ({
-      isLoggedIn: true
+      isLoggedIn: false,
+      loggedInName: ""
     })
   }
 
@@ -30,11 +31,11 @@ class App extends Component {
           <Route exact path="/new">
             {isLoggedIn && <New />}
           </Route>
-          <Route exact path="/user">
-            {isLoggedIn && <User isLoggedIn={isLoggedIn}/>}
-          </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/user">
+            <User />
           </Route>
         </Switch>
       </div>
