@@ -1,4 +1,5 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
+import Snackbar from "./Snackbar"
 import axios from "axios"
 import "./User.css"
 
@@ -12,7 +13,9 @@ class User extends Component {
          username: "",
          email: "",
          password: "",
-         password2: ""
+         password2: "",
+         snackBarOpen: false,
+         msg: ""
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,61 +36,106 @@ class User extends Component {
          email: this.state.email.toLowerCase(),
          password: this.state.password
       })
-      .then( (response) => {
-         console.log("User Component response: ", response)
-      } )
-      .catch( (error) => {
-         console.error("User Component error: ", error)
-      } )
+         .then((response) => {
+            console.log("User Component response: ", response)
+            if (response.data.name === "MongoError") {
+               this.setState({
+                  snackBarOpen: true,
+                  msg: "Those login credentials are already in use"
+               })
+               setTimeout(() => {
+                  this.setState({
+                     first: "",
+                     last: "",
+                     username: "",
+                     email: "",
+                     password: "",
+                     password2: "",
+                     snackBarOpen: false,
+                     msg: ""
+                  })
+               }, 2000);
+            }
+            else if (response.data._message === "User validation failed") {
+               console.log("An error occured attempting to signup")
+            }
+         })
+         .catch((error) => {
+            console.error("User Component error: ", error)
+         })
    }
 
    render() {
 
       // const { isLoggedIn } = this.props
+      const { first, last, username, email, password, password2 } = this.state
 
       return (
+         <Fragment>
          <div className="User">
-            <h1>Signup Page is up Man!</h1>
-            <form onSubmit={this.handleSubmit}>
-               <div className="User-div">
-                  <label>
-                     First Name:
-                  <input type="text" name="first" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <div className="User-div">
-                  <label>
-                     Last Name:
-                  <input type="text" name="last" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <div className="User-div">
-                  <label>
-                     Username:
-                  <input type="text" name="username" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <div className="User-div">
-                  <label>
-                     Email:
-                  <input type="email" name="email" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <div className="User-div">
-                  <label>
-                     Password:
-                  <input type="password" name="password" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <div className="User-div">
-                  <label>
-                     Re-enter Password:
-                  <input type="password" name="password2" onChange={this.handleChange} />
-                  </label>
-               </div>
-               <button>Submit</button>
-            </form>
+            <div className="User-header">
+               <h4 className="User-header-h4">Signup</h4>
+            </div>
+            <div className="User-main-div">
+               <form onSubmit={this.handleSubmit}>
+
+                  <div className="User-row">
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           First Name:
+                           <div>
+                              <input type="text" name="first" value={first} placeholder="First Name" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           Last Name:
+                  <div><input type="text" name="last" value={last} placeholder="Last Name" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                  </div>
+
+                  <div className="User-row">
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           Username:
+                  <div><input type="text" name="username" value={username} placeholder="Username" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           Email:
+                  <div><input type="email" name="email" value={email} placeholder="Email" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                  </div>
+
+                  <div className="User-row">
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           Password:
+                  <div><input type="password" name="password" value={password} placeholder="Password" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                     <span className="User-inner-span">
+                        <label className="User-label">
+                           Re-enter Password:
+                  <div><input type="password" name="password2" value={password2} placeholder="Password" onChange={this.handleChange} />
+                           </div>
+                        </label>
+                     </span>
+                  </div>
+                  <button>Submit</button>
+               </form>
+            </div>
          </div>
+         {this.state.snackBarOpen && <Snackbar msg={this.state.msg}/>}
+         </Fragment>
       )
    }
 }

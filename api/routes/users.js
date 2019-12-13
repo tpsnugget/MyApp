@@ -40,7 +40,7 @@ const User = mongoose.model("User", userSchema)
 router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
-
+/* Add A New User */
 router.post("/", function(req, res){
   console.log("User Post Route req.body", req.body)
   User.create(req.body, (err, newUser) => {
