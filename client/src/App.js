@@ -15,15 +15,24 @@ class App extends Component {
       isLoggedIn: false,
       loggedInName: ""
     })
+    this.updateLoggedInName = this.updateLoggedInName.bind(this)
+  }
+
+  updateLoggedInName(e){
+    console.log("updateLoggedInName: ", e)
+    this.setState({
+      isLoggedIn: true,
+      loggedInName: e
+    })
   }
 
   render() {
 
-    const { isLoggedIn } = this.state
+    const { isLoggedIn, loggedInName } = this.state
 
     return (
       <div className="App">
-      <Navbar isLoggedIn={isLoggedIn}/>
+      <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName}/>
         <Switch>
           <Route exact path="/">
             {isLoggedIn && <Landing />}
@@ -32,7 +41,7 @@ class App extends Component {
             {isLoggedIn && <New />}
           </Route>
           <Route exact path="/login">
-            <Login />
+            <Login updateLoggedInName={this.updateLoggedInName}/>
           </Route>
           <Route exact path="/user">
             <User />

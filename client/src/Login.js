@@ -34,7 +34,6 @@ class Login extends Component{
          }
       })
          .then( (response) => {
-            console.log("Login Component received response: ", response)
 
             if(response.data._id){
                if(response.data.password === this.state.password){
@@ -43,6 +42,7 @@ class Login extends Component{
                      msg: "Login was successful"
                   })
                   setTimeout(() => {
+                     this.props.updateLoggedInName(this.state.username.toLowerCase())
                      this.setState({
                         snackBarOpen: false,
                         msg: "",
