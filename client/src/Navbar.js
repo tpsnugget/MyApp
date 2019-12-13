@@ -6,12 +6,12 @@ class Navbar extends Component {
 
    render() {
 
-      const { isLoggedIn } = this.props
+      const { isLoggedIn, loggedInName } = this.props
 
       return (
          <div className="Navbar">
             <div className="Navbar-left">
-               {isLoggedIn ? <span>You are logged in as: </span> : <span>Please Login or Signup</span>}
+               {isLoggedIn ? <span>You are logged in as: {loggedInName} </span> : <span>Please Login or Signup</span>}
          </div>
          <div className="Navbar-right">
             <Link to="/login" className="Navbar-right-links">Login</Link>
