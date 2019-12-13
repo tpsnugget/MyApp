@@ -16,6 +16,7 @@ class App extends Component {
       loggedInName: ""
     })
     this.updateLoggedInName = this.updateLoggedInName.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   updateLoggedInName(e){
@@ -25,13 +26,17 @@ class App extends Component {
     })
   }
 
+  logout(){
+    this.setState({isLoggedIn: false})
+  }
+
   render() {
 
     const { isLoggedIn, loggedInName } = this.state
 
     return (
       <div className="App">
-      <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName}/>
+      <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName} logout={this.logout} />
         <Switch>
           <Route exact path="/landing">
             {isLoggedIn && <Landing />}

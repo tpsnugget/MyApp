@@ -4,27 +4,36 @@ import "./Navbar.css"
 
 class Navbar extends Component {
 
+   constructor(props){
+      super(props)
+      this.handleLogout = this.handleLogout.bind(this)
+   }
+
+   handleLogout(){
+      this.props.logout()
+   }
+
    render() {
 
-      const loginSignup =
+      const { isLoggedIn, loggedInName } = this.props
+
+      const loginSignupLinks =
          <div className="Navbar-right">
             <Link to="/login" className="Navbar-right-links">Login</Link>
             <Link to="/user" className="Navbar-right-links">Signup</Link>
          </div>
 
-      const logout =
+      const logoutLink =
          <div className="Navbar-right">
-            <Link to="/login" className="Navbar-right-links">Logout</Link>
+            <Link to="/login" className="Navbar-right-links" onClick={this.handleLogout}>Logout</Link>
          </div>
-
-      const { isLoggedIn, loggedInName } = this.props
 
       return (
          <div className="Navbar">
             <div className="Navbar-left">
                {isLoggedIn ? <span>You are logged in as: {loggedInName} </span> : <span>Please Login or Signup</span>}
             </div>
-            {isLoggedIn ? logout : loginSignup}
+            {isLoggedIn ? logoutLink : loginSignupLinks}
          </div >
       )
    }
