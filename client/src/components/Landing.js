@@ -12,6 +12,7 @@ class Landing extends Component {
 
             <div className="Landing-img-row">
                <div className="Landing-button">
+                  <p className="Landing-title">Beer</p>
                   <Link to="/landingBeer">
                      <img
                         className="Landing-img"
@@ -21,6 +22,7 @@ class Landing extends Component {
                </div>
 
                <div className="Landing-button">
+                  <p className="Landing-title">Recipes</p>
                   <Link to="/landingRecipe">
                      <img
                         className="Landing-img"
@@ -32,6 +34,7 @@ class Landing extends Component {
 
             <div className="Landing-img-row">
                <div className="Landing-button">
+                  <p className="Landing-title">Restaurants</p>
                   <Link to="/landingRestaurant">
                      <img
                         className="Landing-img"
@@ -41,6 +44,7 @@ class Landing extends Component {
                </div>
 
                <div className="Landing-button">
+                  <p className="Landing-title">RV Sites</p>
                   <Link to="/landingRV">
                      <img
                         className="Landing-img"

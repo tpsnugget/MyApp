@@ -7,7 +7,7 @@ const options = {
   useUnifiedTopology: true
 }
 
-mongoose.connect("mongodb://localhost:27017/myRestaurantsDB", options)
+mongoose.connect("mongodb://localhost:27017/MyAppDB", options)
 
 const restaurantSchema = new mongoose.Schema({
   name: String,
