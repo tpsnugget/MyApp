@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
 import Snackbar from "./Snackbar"
 import axios from "axios"
-import "./Login.css"
+import "../css/Login.css"
 
 class Login extends Component{
 

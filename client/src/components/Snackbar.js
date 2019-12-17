@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./Snackbar.css"
+import "../css/Snackbar.css"
 
 class Snackbar extends Component{
 
