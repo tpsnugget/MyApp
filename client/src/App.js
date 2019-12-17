@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
-import Navbar from "./components/Navbar"
+import Navbar from "./restaurant/components/Navbar"
 import Landing from "./components/Landing"
-import New from "./components/New"
+import New from "./restaurant/components/New"
 import User from "./components/User"
 import Login from "./components/Login"
+import Beer from "./beer/components/Beer"
+import Recipe from "./recipe/components/Recipe"
+import Restaurant from "./restaurant/components/Restaurant"
+import RV from "./rv/components/RV"
 import './css/App.css';
 
 class App extends Component {
@@ -19,15 +23,15 @@ class App extends Component {
     this.logout = this.logout.bind(this)
   }
 
-  updateLoggedInName(e){
+  updateLoggedInName(e) {
     this.setState({
       isLoggedIn: true,
       loggedInName: e
     })
   }
 
-  logout(){
-    this.setState({isLoggedIn: false})
+  logout() {
+    this.setState({ isLoggedIn: false })
   }
 
   render() {
@@ -36,20 +40,43 @@ class App extends Component {
 
     return (
       <div className="App">
-      <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName} logout={this.logout} />
+        <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName} logout={this.logout} />
         <Switch>
           <Route exact path="/landing">
-            {isLoggedIn && <Landing />}
+
+            {/*  Commented out so I don't have to sign in each time during development.
+                 Uncomment once App is complete
+            {isLoggedIn && <Landing />}  */}
           </Route>
+
+          {/* This gets deleted once App is complete */}
+          <Route exact path="/">
+            <Landing />
+          </Route>
+
           <Route exact path="/new">
             {isLoggedIn && <New />}
           </Route>
           <Route exact path="/login">
-            <Login updateLoggedInName={this.updateLoggedInName}/>
+            <Login updateLoggedInName={this.updateLoggedInName} />
           </Route>
           <Route exact path="/user">
             <User />
           </Route>
+
+          <Route exact path="/landingBeer">
+            <Beer />
+          </Route>
+          <Route exact path="/landingRecipe">
+            <Recipe />
+          </Route>
+          <Route exact path="/landingRestaurant">
+            <Restaurant />
+          </Route>
+          <Route exact path="/landingRV">
+            <RV />
+          </Route>
+
         </Switch>
       </div>
     );

@@ -1,20 +1,55 @@
+/* MAIN LANDING PAGE */
+
 import React, { Component } from "react"
-// import axios from "axios"
+import { Link } from "react-router-dom"
+import "../css/Landing.css"
 
-class Landing extends Component{
+class Landing extends Component {
 
-   constructor(props){
-      super(props)
-      this.state = {
+   render() {
+      return (
+         <div className="Landing-main-container">
 
-      }
-   }
+            <div className="Landing-img-row">
+               <div className="Landing-button">
+                  <Link to="/landingBeer">
+                     <img
+                        className="Landing-img"
+                        src="https://images.unsplash.com/photo-1571527036651-5860024b2351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="Beer" />
+                  </Link>
+               </div>
 
-   render(){
+               <div className="Landing-button">
+                  <Link to="/landingRecipe">
+                     <img
+                        className="Landing-img"
+                        src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="Recipe" />
+                  </Link>
+               </div>
+            </div>
 
-      return(
-         <div>
-            <h1>Landing is up man!</h1>
+            <div className="Landing-img-row">
+               <div className="Landing-button">
+                  <Link to="/landingRestaurant">
+                     <img
+                        className="Landing-img"
+                        src="https://images.unsplash.com/photo-1489528792647-46ec39027556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="Restaurant" />
+                  </Link>
+               </div>
+
+               <div className="Landing-button">
+                  <Link to="/landingRV">
+                     <img
+                        className="Landing-img"
+                        src="https://images.unsplash.com/photo-1536483229849-71255a26bbd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="RV" />
+                  </Link>
+               </div>
+            </div>
+
          </div>
       )
    }

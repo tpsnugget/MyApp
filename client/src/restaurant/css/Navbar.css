@@ -11,8 +11,9 @@
 }
 
 .Navbar-left {
-   width: 30%;
+   width: 40%;
    margin: 2rem;
+   text-align: left;
    color: rgba(255, 255, 240, 1);
 }
 
@@ -27,5 +28,6 @@
    justify-content: flex-end;
    color: rgba(255, 255, 240, 1);
    text-decoration: none;
-   margin: 2rem;
+   margin: 2rem 1rem;
+   margin-right: 0;
 }
