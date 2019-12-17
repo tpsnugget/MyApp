@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
-import Navbar from "./Navbar"
-import Landing from "./Landing"
-import New from "./New"
-import User from "./User"
-import Login from "./Login"
-import './App.css';
+import Navbar from "./components/Navbar"
+import Landing from "./components/Landing"
+import New from "./components/New"
+import User from "./components/User"
+import Login from "./components/Login"
+import './css/App.css';
 
 class App extends Component {
 
