@@ -43,17 +43,8 @@ class App extends Component {
         <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName} logout={this.logout} />
         <Switch>
           <Route exact path="/landing">
-
-            {/*  Commented out so I don't have to sign in each time during development.
-                 Uncomment once App is complete
-            {isLoggedIn && <Landing />}  */}
+            {isLoggedIn && <Landing />} 
           </Route>
-
-          {/* This gets deleted once App is complete */}
-          <Route exact path="/">
-            <Landing />
-          </Route>
-
           <Route exact path="/new">
             {isLoggedIn && <New />}
           </Route>
@@ -65,16 +56,16 @@ class App extends Component {
           </Route>
 
           <Route exact path="/landingBeer">
-            <Beer />
+            {isLoggedIn && <Beer />}
           </Route>
           <Route exact path="/landingRecipe">
-            <Recipe />
+            {isLoggedIn && <Recipe />}
           </Route>
           <Route exact path="/landingRestaurant">
-            <Restaurant />
+            {isLoggedIn && <Restaurant />}
           </Route>
           <Route exact path="/landingRV">
-            <RV />
+            {isLoggedIn && <RV />}
           </Route>
 
         </Switch>

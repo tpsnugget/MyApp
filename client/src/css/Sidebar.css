@@ -1,0 +1,9 @@
+.Sidebar-main-container {
+   width: 250px;
+   height: 100vh;
+   background-color: lightgray;
+}
+
+.Sidebar-h1 {
+   color: purple;
+}
