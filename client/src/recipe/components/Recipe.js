@@ -2,6 +2,8 @@
 
 import React, { Component } from "react"
 import Sidebar from "../../components/Sidebar"
+import Mininavbar from "../../components/Mininavbar"
+
 import "../css/Recipe.css"
 
 
@@ -11,7 +13,7 @@ class Recipe extends Component{
       return(
          <div className="Recipe-main-container">
             <Sidebar />
-            <h1>Recipe Landing page is up Man!</h1>
+            <Mininavbar name={this.props.name}/>
          </div>
       )
    }

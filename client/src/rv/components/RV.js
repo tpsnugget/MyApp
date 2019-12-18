@@ -2,6 +2,7 @@
 
 import React, { Component } from "react"
 import Sidebar from "../../components/Sidebar"
+import Mininavbar from "../../components/Mininavbar"
 import "../css/RV.css"
 
 
@@ -11,7 +12,7 @@ class RV extends Component{
       return(
          <div className="RV-main-container">
             <Sidebar />
-            <h1>RV Landing page is up Man!</h1>
+            <Mininavbar name={this.props.name}/>
          </div>
       )
    }

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Sidebar from "../../components/Sidebar"
+import Mininavbar from "../../components/Mininavbar"
 import "../css/Restaurant.css"
 
 class Restaurant extends Component{
@@ -16,7 +17,7 @@ class Restaurant extends Component{
       return(
          <div className="Restaurant-main-container">
             <Sidebar />
-            <h1>Restaurant Landing page is up man!</h1>
+            <Mininavbar name={this.props.name}/>
          </div>
       )
    }
