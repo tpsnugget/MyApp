@@ -1,0 +1,59 @@
+.BeerNew-main-container {
+   margin-top: 32px;
+}
+
+.BeerNew-form-container {
+   width: 65%;
+   border: 1px solid rgba(3, 87, 3, 0.90);
+   background-color: rgba(3, 87, 3, 0.05);
+   margin: 32px 32px 16px 32px;
+   border-radius: 4px;
+}
+
+.BeerNew-submit-button {
+   font-size: 1.2rem;
+   font-weight: 500;
+   color: black;
+   padding: 0.25rem 0.5rem;
+   margin: 16px 16px;
+}
+
+.BeerNew-div-row {
+   display: flex;
+}
+
+.BeerNew-label {
+   margin: 8px 16px;
+   text-align: start;
+}
+
+.BeerNew-span {
+   margin-left: 4px;
+}
+
+.BeerNew-input {
+   width: 250px;
+   margin-left: 0;
+}
+
+.BeerNew-input-address {
+   width: 532px;
+}
+
+.BeerNew-input-image {
+   width: 826px;
+}
+
+.BeerNew-select {
+   width: 250px;
+   height: 39px;
+   margin: 8px 0;
+   font-size: 1.0rem;
+   font-weight: 500;
+   background-color: white;
+}
+
+.BeerNew-input-short {
+   width: 145px;
+   margin-left: 16px;
+}
