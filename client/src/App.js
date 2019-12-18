@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
-import Navbar from "./restaurant/components/Navbar"
+import Navbar from "./components/Navbar"
 import Landing from "./components/Landing"
 import New from "./restaurant/components/New"
 import User from "./components/User"
 import Login from "./components/Login"
 import Beer from "./beer/components/Beer"
+import BeerNew from "./beer/components/BeerNew"
 import Recipe from "./recipe/components/Recipe"
 import Restaurant from "./restaurant/components/Restaurant"
 import RV from "./rv/components/RV"
@@ -55,17 +56,20 @@ class App extends Component {
             <User />
           </Route>
 
-          <Route exact path="/landingBeer">
-            {isLoggedIn && <Beer />}
+          <Route exact path="/beer">
+            {isLoggedIn && <Beer name="Beer"/>}
+          </Route>
+          <Route exact path="/beer/new">
+            {isLoggedIn && <BeerNew />}
           </Route>
           <Route exact path="/landingRecipe">
-            {isLoggedIn && <Recipe />}
+            {isLoggedIn && <Recipe name="Recipe"/>}
           </Route>
           <Route exact path="/landingRestaurant">
-            {isLoggedIn && <Restaurant />}
+            {isLoggedIn && <Restaurant name="Restaurant"/>}
           </Route>
           <Route exact path="/landingRV">
-            {isLoggedIn && <RV />}
+            {isLoggedIn && <RV name="RV"/>}
           </Route>
 
         </Switch>

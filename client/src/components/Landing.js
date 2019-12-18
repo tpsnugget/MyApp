@@ -13,7 +13,7 @@ class Landing extends Component {
             <div className="Landing-img-row">
                <div className="Landing-button">
                   <p className="Landing-title">Beer</p>
-                  <Link to="/landingBeer">
+                  <Link to="/beer">
                      <img
                         className="Landing-img"
                         src="https://images.unsplash.com/photo-1571527036651-5860024b2351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
