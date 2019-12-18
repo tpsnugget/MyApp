@@ -1,0 +1,17 @@
+.Cancel-button {
+   font-size: 1.2rem;
+   font-weight: 500;
+   letter-spacing: 0.1rem;
+   color: black;
+   padding: 0.25rem 0.5rem;
+}
+
+.Cancel-link {
+   text-decoration: none;
+   color: black;
+}
+
+.Cancel-div {
+   display: flex;
+   margin: 0 48px;
+}

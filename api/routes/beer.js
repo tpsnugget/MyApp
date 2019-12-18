@@ -11,32 +11,31 @@ const beerSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  streetAddress: {
-    type: String,
-    required: true
-  },
+  streetAddress: String,
   city: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   state: {
     type: String,
-    required: true,
-    unique: true
-  },
-  zip: {
-    type: String,
     required: true
   },
-  image: {
-    type: String
-  }
+  zip: String,
+  latitude: String,
+  longitude: String,
+  image: String,
+  website: String,
+  beerType: String,
+  beerColor: String,
+  glassware: String,
+  abv: String,
+  ibu: String,
+  rating: String
 })
 
 const Beer = mongoose.model("Beer", beerSchema)
 
-// /* Get A User */
+// /* Get Beer */
 // router.get('/', function (req, res) {
 //   console.log("Get req.query: ", req.query)
 //   User.findOne(req.query, function (err, foundUser) {
