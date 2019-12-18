@@ -6,16 +6,15 @@ import Mininavbar from "../../components/Mininavbar"
 import "../css/Beer.css"
 
 
-class Beer extends Component{
+class BeerNew extends Component{
 
    render(){
       return(
          <div className="Beer-main-container">
-            <Sidebar />
-            <Mininavbar name={this.props.name}/>
+            <h1>New Beer page is up Man!</h1>
          </div>
       )
    }
 }
 
-export default Beer
+export default BeerNew
