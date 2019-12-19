@@ -25,25 +25,26 @@ const restaurantSchema = new mongoose.Schema({
   favFood: String,
   rating: String,
   cuisine: String,
-  price: String
+  price: String,
+  addedBy: String
 })
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema)
 
-// /* Get Beer */
-// router.get('/', function (req, res) {
-//   console.log("Get req.query: ", req.query)
-//   User.findOne(req.query, function (err, foundUser) {
-//     if (err) {
-//       console.error("User Get Route Error: ", err)
-//       res.send(err)
-//     }
-//     else {
-//       console.log("User Get Route foundUser", foundUser)
-//       res.send(foundUser)
-//     }
-//   })
-// });
+/* Get Restaurant */
+router.get('/', function (req, res) {
+  console.log("Get req.query: ", req.query)
+  Restaurant.find(req.query, function (err, foundRestaurant) {
+    if (err) {
+      console.error("User Get Route Error: ", err)
+      res.send(err)
+    }
+    else {
+      console.log("User Get Route foundUser", foundRestaurant)
+      res.send(foundRestaurant)
+    }
+  })
+});
 
 /* Add A New Restaurant */
 router.post("/", function (req, res) {

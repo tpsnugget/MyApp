@@ -58,7 +58,8 @@ class RestaurantNew extends Component {
          favFood: this.state.favFood,
          rating: this.state.rating,
          cuisine: this.state.cuisine,
-         price: this.state.price
+         price: this.state.price,
+         addedBy: this.props.username
       }
 
       axios.post("http://localhost:9000/restaurant", newRestaurant)
