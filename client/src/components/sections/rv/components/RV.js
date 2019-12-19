@@ -1,8 +1,8 @@
 /* RV LANDING PAGE */
 
 import React, { Component } from "react"
-import Sidebar from "../../components/Sidebar"
-import Mininavbar from "../../components/Mininavbar"
+import Sidebar from "../../../../components/Sidebar"
+import Mininavbar from "../../../../components/Mininavbar"
 import "../css/RV.css"
 
 

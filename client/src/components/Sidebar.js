@@ -39,7 +39,7 @@ class Sidebar extends Component{
 
       const display = this.state.data.map( (item, i) => {
          return(
-            <div>
+            <div key={item._id} id={item._id}>
                <p className="Sidebar-p">{item.name}</p>
                <img
                   src={item.image}

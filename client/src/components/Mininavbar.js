@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import LinkButton from "./Atoms/LinkButton/LinkButton"
 import "../css/Mininavbar.css"
 
 class Mininavbar extends Component {
@@ -12,32 +12,11 @@ class Mininavbar extends Component {
 
       return (
          <div className="Mininavbar-main-container">
-            <div className="Mininavbar-div">
-               <Link
-                  to={newPath}
-                  className="Mininavbar-link-new"
-               >
-                  Add New {this.props.name}
-            </Link>
-            </div>
 
-            <div className="Mininavbar-div">
-               <Link
-                  to={editPath}
-                  className="Mininavbar-link-new"
-               >
-                  Edit {this.props.name}
-            </Link>
-            </div>
+         <LinkButton newPath={newPath} name={this.props.name} buttonLabel="Add New"/>
+         <LinkButton newPath={editPath} name={this.props.name} buttonLabel="Edit"/>
+         <LinkButton newPath={deletePath} name={this.props.name} buttonLabel="Delete"/>
 
-            <div className="Mininavbar-div">
-               <Link
-                  to={deletePath}
-                  className="Mininavbar-link-new"
-               >
-                  Delete {this.props.name}
-            </Link>
-            </div>
          </div>
       )
    }

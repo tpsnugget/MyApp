@@ -1,9 +1,9 @@
 /* BEER LANDING PAGE */
 
 import React, { Component } from "react"
-import Sidebar from "../../components/Sidebar"
-import Mininavbar from "../../components/Mininavbar"
-import Cancel from "../../components/Cancel"
+import Sidebar from "../../../../components/Sidebar"
+import Mininavbar from "../../../../components/Mininavbar"
+import Cancel from "../../../../components/Cancel"
 import "../css/Beer.css"
 
 
