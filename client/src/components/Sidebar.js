@@ -22,7 +22,7 @@ class Sidebar extends Component{
             if (response.data === "") {
                console.log("axios.get not in the db")
             } else {
-               console.log("axios.get /beer params: {}, response: ", response)
+               // console.log("axios.get /beer params: {}, response: ", response)
                this.setState({
                   data: response.data
                })
@@ -32,6 +32,10 @@ class Sidebar extends Component{
    }
 
    render(){
+
+      this.state.data.sort( (a, b) => {
+         return a.name.localeCompare(b.name)
+      } )
 
       const display = this.state.data.map( (item, i) => {
          return(
