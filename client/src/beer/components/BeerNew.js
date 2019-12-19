@@ -1,4 +1,4 @@
-/* BEER LANDING PAGE */
+/* Add a New BEER PAGE */
 
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
@@ -19,6 +19,7 @@ class BeerNew extends Component {
          city: "",
          state: "",
          zip: "",
+         phone: "",
          latitude: "",
          longitude: "",
          image: "",
@@ -53,6 +54,7 @@ class BeerNew extends Component {
          city: this.state.city,
          state: this.state.state,
          zip: this.state.zip,
+         phone: this.state.phone,
          latitude: this.state.latitude,
          longitude: this.state.longitude,
          image: this.state.image,
@@ -182,6 +184,16 @@ class BeerNew extends Component {
                   </div>
 
                   <div className="BeerNew-div-row">
+                  <label className="BeerNew-label"><span className="BeerNew-span">Phone:</span>
+                        <div>
+                           <input
+                              type="text"
+                              name="phone"
+                              className="BeerNew-input"
+                              onChange={this.handleChange}
+                           />
+                        </div>
+                     </label>
                      <label className="BeerNew-label"><span className="BeerNew-span">Latitude:</span>
                         <div>
                            <input
