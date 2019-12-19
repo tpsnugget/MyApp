@@ -23,7 +23,7 @@ class Landing extends Component {
 
                <div className="Landing-button">
                   <p className="Landing-title">Recipes</p>
-                  <Link to="/landingRecipe">
+                  <Link to="/recipe">
                      <img
                         className="Landing-img"
                         src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -35,7 +35,7 @@ class Landing extends Component {
             <div className="Landing-img-row">
                <div className="Landing-button">
                   <p className="Landing-title">Restaurants</p>
-                  <Link to="/landingRestaurant">
+                  <Link to="/restaurant">
                      <img
                         className="Landing-img"
                         src="https://images.unsplash.com/photo-1489528792647-46ec39027556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -45,7 +45,7 @@ class Landing extends Component {
 
                <div className="Landing-button">
                   <p className="Landing-title">RV Sites</p>
-                  <Link to="/landingRV">
+                  <Link to="/rv">
                      <img
                         className="Landing-img"
                         src="https://images.unsplash.com/photo-1536483229849-71255a26bbd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"

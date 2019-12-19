@@ -9,6 +9,7 @@ import Beer from "./beer/components/Beer"
 import BeerNew from "./beer/components/BeerNew"
 import Recipe from "./recipe/components/Recipe"
 import Restaurant from "./restaurant/components/Restaurant"
+import RestaurantNew from "./restaurant/components/RestaurantNew"
 import RV from "./rv/components/RV"
 import './css/App.css';
 
@@ -62,13 +63,20 @@ class App extends Component {
           <Route exact path="/beer/new">
             {isLoggedIn && <BeerNew />}
           </Route>
-          <Route exact path="/landingRecipe">
+
+
+          <Route exact path="/recipe">
             {isLoggedIn && <Recipe name="Recipe"/>}
           </Route>
-          <Route exact path="/landingRestaurant">
+
+          <Route exact path="/restaurant">
             {isLoggedIn && <Restaurant name="Restaurant"/>}
           </Route>
-          <Route exact path="/landingRV">
+          <Route exact path="/restaurant/new">
+            {isLoggedIn && <RestaurantNew />}
+          </Route>
+
+          <Route exact path="/rv">
             {isLoggedIn && <RV name="RV"/>}
           </Route>
 

@@ -21,6 +21,7 @@ const beerSchema = new mongoose.Schema({
     required: true
   },
   zip: String,
+  phone: String,
   latitude: String,
   longitude: String,
   image: String,
@@ -53,14 +54,14 @@ const Beer = mongoose.model("Beer", beerSchema)
 /* Add A New Beer */
 router.post("/", function (req, res) {
   console.log("User Post Route req.body", req.body)
-  Beer.create(req.body, (err, newUser) => {
+  Beer.create(req.body, (err, newBeer) => {
     if (err) {
       console.error("User Post Route Error: ", err)
       res.send(err)
     }
     else {
-      console.log("User Post Route newUser", newUser)
-      res.send(newUser)
+      console.log("User Post Route newBeer", newBeer)
+      res.send(newBeer)
     }
   })
 })
