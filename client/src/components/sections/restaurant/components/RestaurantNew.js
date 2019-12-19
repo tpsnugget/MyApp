@@ -2,8 +2,8 @@
 
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
-import Cancel from "../../components/Cancel"
-import Snackbar from "../../components/Snackbar"
+import Cancel from "../../../../components/Cancel"
+import Snackbar from "../../../../components/Snackbar"
 import axios from "axios"
 import "../css/RestaurantNew.css"
 

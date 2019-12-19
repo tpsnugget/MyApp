@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Landing from "./components/Landing"
-import New from "./restaurant/components/New"
+import New from "./components/sections/restaurant/components/New"
 import User from "./components/User"
 import Login from "./components/Login"
-import Beer from "./beer/components/Beer"
-import BeerNew from "./beer/components/BeerNew"
-import Recipe from "./recipe/components/Recipe"
-import Restaurant from "./restaurant/components/Restaurant"
-import RestaurantNew from "./restaurant/components/RestaurantNew"
-import RV from "./rv/components/RV"
+import Beer from "./components/sections/beer/components/Beer"
+import BeerNew from "./components/sections/beer/components/BeerNew"
+import Recipe from "./components/sections/recipe/components/Recipe"
+import Restaurant from "./components/sections/restaurant/components/Restaurant"
+import RestaurantNew from "./components/sections/restaurant/components/RestaurantNew"
+import RV from "./components/sections/rv/components/RV"
 import './css/App.css';
 
 class App extends Component {
