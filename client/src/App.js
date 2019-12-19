@@ -72,9 +72,11 @@ class App extends Component {
             {isLoggedIn && <RV name="RV"/>}
           </Route>
 
+
           <Route exact path="/">
             <BeerNew />
           </Route>
+
 
         </Switch>
       </div>

@@ -12,7 +12,7 @@ class Recipe extends Component{
    render(){
       return(
          <div className="Recipe-main-container">
-            <Sidebar />
+            <Sidebar name={this.props.name}/>
             <Mininavbar name={this.props.name}/>
          </div>
       )

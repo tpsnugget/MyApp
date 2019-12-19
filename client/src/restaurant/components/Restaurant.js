@@ -16,7 +16,7 @@ class Restaurant extends Component{
 
       return(
          <div className="Restaurant-main-container">
-            <Sidebar />
+            <Sidebar name={this.props.name}/>
             <Mininavbar name={this.props.name}/>
          </div>
       )

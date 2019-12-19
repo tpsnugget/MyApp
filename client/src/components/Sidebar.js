@@ -6,7 +6,7 @@ class Sidebar extends Component{
    render(){
       return(
          <div className="Sidebar-main-container">
-            <h1 className="Sidebar-h1">Sidebar is up Man!</h1>
+            <h1 className="Sidebar-h1">{this.props.name}</h1>
          </div>
       )
    }

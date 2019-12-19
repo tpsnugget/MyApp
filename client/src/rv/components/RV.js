@@ -11,7 +11,7 @@ class RV extends Component{
    render(){
       return(
          <div className="RV-main-container">
-            <Sidebar />
+            <Sidebar name={this.props.name}/>
             <Mininavbar name={this.props.name}/>
          </div>
       )
