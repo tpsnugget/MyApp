@@ -23,7 +23,10 @@ class RestaurantNew extends Component {
          longitude: "",
          image: "",
          website: "",
+         favFood: "",
          rating: "",
+         cuisine: "",
+         price: "",
          snackBarOpen: false,
          msg: "",
          addRestaurantSuccessful: false
@@ -52,7 +55,10 @@ class RestaurantNew extends Component {
          longitude: this.state.longitude,
          image: this.state.image,
          website: this.state.website,
-         rating: this.state.rating
+         favFood: this.state.favFood,
+         rating: this.state.rating,
+         cuisine: this.state.cuisine,
+         price: this.state.price
       }
 
       axios.post("http://localhost:9000/restaurant", newRestaurant)
@@ -172,7 +178,7 @@ class RestaurantNew extends Component {
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                  <label className="RestaurantNew-label"><span className="RestaurantNew-span">Phone:</span>
+                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Phone:</span>
                         <div>
                            <input
                               type="text"
@@ -251,6 +257,17 @@ class RestaurantNew extends Component {
                            />
                         </div>
                      </label> */}
+
+                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Favorite Food:</span>
+                        <div>
+                           <input
+                              type="text"
+                              name="favFood"
+                              className="RestaurantNew-input"
+                              onChange={this.handleChange}
+                           />
+                        </div>
+                     </label>
                      <label className="RestaurantNew-label"><span className="RestaurantNew-span">Rating:</span>
                         <div>
                            <input
@@ -259,6 +276,52 @@ class RestaurantNew extends Component {
                               className="RestaurantNew-input"
                               onChange={this.handleChange}
                            />
+                        </div>
+                     </label>
+                  </div>
+
+                  <div className="RestaurantNew-div-row">
+                     <label className="BeerNew-label"><span className="BeerNew-span">Cuisine:</span>
+                        <div>
+                           <select
+                              type="text"
+                              name="cuisine"
+                              className="BeerNew-select"
+                              onChange={this.handleChange}>
+                              <option value="">Select a Cuisine</option>
+                              <option value="american">American</option>
+                              <option value="cajun">Cajun</option>
+                              <option value="french">French</option>
+                              <option value="german">German</option>
+                              <option value="indian">Indian</option>
+                              <option value="italian">Italian</option>
+                              <option value="japanese">Japanese</option>
+                              <option value="korean">Korean</option>
+                              <option value="mexican">Mexican</option>
+                              <option value="spanish">Spanish</option>
+                              <option value="thai">Thai</option>
+                           </select>
+                        </div>
+                     </label>
+                     <label className="BeerNew-label"><span className="BeerNew-span">Cost:</span>
+                        <div>
+                           <select
+                              type="text"
+                              name="price"
+                              className="BeerNew-select"
+                              onChange={this.handleChange}>
+                              <option value="">Total Price Per Person</option>
+                              <option value="under10">Less than $10 each</option>
+                              <option value="under15">Less than $15 each</option>
+                              <option value="under20">Less than $20 each</option>
+                              <option value="under25">Less than $25 each</option>
+                              <option value="under30">Less than $30 each</option>
+                              <option value="under35">Less than $35 each</option>
+                              <option value="under40">Less than $40 each</option>
+                              <option value="under45">Less than $45 each</option>
+                              <option value="under50">Less than $50 each</option>
+                              <option value="over50">More than $50 each</option>
+                           </select>
                         </div>
                      </label>
                   </div>

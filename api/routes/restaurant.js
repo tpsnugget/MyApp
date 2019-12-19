@@ -22,7 +22,10 @@ const restaurantSchema = new mongoose.Schema({
   longitude: String,
   image: String,
   website: String,
-  rating: String
+  favFood: String,
+  rating: String,
+  cuisine: String,
+  price: String
 })
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema)
