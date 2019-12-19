@@ -28,20 +28,20 @@ const beerSchema = new mongoose.Schema({
 
 const Beer = mongoose.model("Beer", beerSchema)
 
-// /* Get Beer */
-// router.get('/', function (req, res) {
-//   console.log("Get req.query: ", req.query)
-//   User.findOne(req.query, function (err, foundUser) {
-//     if (err) {
-//       console.error("User Get Route Error: ", err)
-//       res.send(err)
-//     }
-//     else {
-//       console.log("User Get Route foundUser", foundUser)
-//       res.send(foundUser)
-//     }
-//   })
-// });
+/* Get Beer */
+router.get('/', function (req, res) {
+  console.log("Get req.query: ", req.query)
+  Beer.find(req.query, function (err, foundBeer) {
+    if (err) {
+      console.error("User Get Route Error: ", err)
+      res.send(err)
+    }
+    else {
+      console.log("User Get Route foundUser", foundBeer)
+      res.send(foundBeer)
+    }
+  })
+});
 
 /* Add A New Beer */
 router.post("/", function (req, res) {
