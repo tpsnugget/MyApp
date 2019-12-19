@@ -33,9 +33,23 @@ class Sidebar extends Component{
 
    render(){
 
+      const display = this.state.data.map( (item, i) => {
+         return(
+            <div>
+               <p className="Sidebar-p">{item.name}</p>
+               <img
+                  src={item.image}
+                  alt={item.name}
+                  className="Sidebar-img"
+               />
+               {i < this.state.data.length - 1 ? <hr /> : ""}
+            </div>
+         )
+      } )
+
       return(
          <div className="Sidebar-main-container">
-            <h1 className="Sidebar-h1">{this.props.name}</h1>
+            {display}
          </div>
       )
    }

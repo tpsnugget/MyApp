@@ -4,6 +4,11 @@
    background-color: lightgray;
 }
 
-.Sidebar-h1 {
+.Sidebar-p {
    color: purple;
+   margin: 0.5rem 0.5rem;
+}
+
+.Sidebar-img {
+   width: 60%;
 }

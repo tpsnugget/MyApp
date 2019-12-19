@@ -30,7 +30,7 @@ const Beer = mongoose.model("Beer", beerSchema)
 
 /* Get Beer */
 router.get('/', function (req, res) {
-  console.log("Get req.query: ", req.query)
+  // console.log("Get req.query: ", req.query)
   Beer.find(req.query, function (err, foundBeer) {
     if (err) {
       console.error("User Get Route Error: ", err)
@@ -45,7 +45,7 @@ router.get('/', function (req, res) {
 
 /* Add A New Beer */
 router.post("/", function (req, res) {
-  console.log("User Post Route req.body", req.body)
+  // console.log("User Post Route req.body", req.body)
   Beer.create(req.body, (err, newBeer) => {
     if (err) {
       console.error("User Post Route Error: ", err)
