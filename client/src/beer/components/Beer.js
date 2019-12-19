@@ -9,6 +9,13 @@ import "../css/Beer.css"
 
 class Beer extends Component {
 
+   constructor(props){
+      super(props)
+      this.state = {
+         
+      }
+   }
+
    render() {
       return (
          <div className="Beer-main-container">

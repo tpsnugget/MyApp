@@ -64,7 +64,8 @@ class BeerNew extends Component {
          glassware: this.state.glassware,
          abv: this.state.abv,
          ibu: this.state.ibu,
-         rating: this.state.rating
+         rating: this.state.rating,
+         addedBy: this.props.username
       }
 
       axios.post("http://localhost:9000/beer", newBeer)

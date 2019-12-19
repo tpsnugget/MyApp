@@ -7,19 +7,10 @@ const beerSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  brewery: {
-    type: String,
-    required: true
-  },
+  brewery: String,
   streetAddress: String,
-  city: {
-    type: String,
-    required: true
-  },
-  state: {
-    type: String,
-    required: true
-  },
+  city: String,
+  state: String,
   zip: String,
   phone: String,
   latitude: String,
@@ -31,7 +22,8 @@ const beerSchema = new mongoose.Schema({
   glassware: String,
   abv: String,
   ibu: String,
-  rating: String
+  rating: String,
+  addedBy: String
 })
 
 const Beer = mongoose.model("Beer", beerSchema)

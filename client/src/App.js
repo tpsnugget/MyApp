@@ -61,7 +61,7 @@ class App extends Component {
             {isLoggedIn && <Beer name="Beer"/>}
           </Route>
           <Route exact path="/beer/new">
-            {isLoggedIn && <BeerNew />}
+            {isLoggedIn && <BeerNew username={loggedInName}/>}
           </Route>
 
 
@@ -79,12 +79,6 @@ class App extends Component {
           <Route exact path="/rv">
             {isLoggedIn && <RV name="RV"/>}
           </Route>
-
-
-          <Route exact path="/">
-            <BeerNew />
-          </Route>
-
 
         </Switch>
       </div>
