@@ -11,11 +11,8 @@
 }
 
 .BeerNew-submit-button {
-   font-size: 1.2rem;
-   font-weight: 500;
-   color: black;
-   padding: 0.25rem 0.5rem;
-   margin: 16px 16px;
+   margin-left: 16px;
+   margin-top: 8px;
 }
 
 .BeerNew-div-row {

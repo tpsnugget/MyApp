@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
 import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
+import Button from "./Atoms/Button/Button"
 import axios from "axios"
 import "../css/User.css"
 
@@ -184,7 +185,7 @@ class User extends Component {
                            </label>
                         </span>
                      </div>
-                     <button>Submit</button>
+                     <Button label="Submit"/>
                   </form>
                </div>
             </div>
