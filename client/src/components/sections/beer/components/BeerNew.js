@@ -3,7 +3,9 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import Cancel from "../../../../components/Cancel"
-import Snackbar from "../../../Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
+import Button from "../../../Atoms/Button/Button"
 import axios from "axios"
 import "../css/BeerNew.css"
 
@@ -31,6 +33,7 @@ class BeerNew extends Component {
          ibu: "",
          rating: "",
          snackBarGreenOpen: false,
+         snackBarRedOpen: false,
          msg: "",
          addBeerSuccessful: false
       }
@@ -73,12 +76,12 @@ class BeerNew extends Component {
             // console.log(response)
             if (response.data.name === "MongoError") {
                this.setState({
-                  snackBarGreenOpen: true,
+                  snackBarRedOpen: true,
                   msg: "Beer was not added..."
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarGreenOpen: false,
+                     snackBarRedOpen: false,
                      msg: ""
                   })
                }, 2000);
@@ -101,7 +104,7 @@ class BeerNew extends Component {
 
    render() {
 
-      const { addBeerSuccessful, snackBarGreenOpen } = this.state
+      const { addBeerSuccessful, snackBarGreenOpen, snackBarRedOpen } = this.state
 
       return (
          <div className="BeerNew-main-container">
@@ -353,8 +356,8 @@ class BeerNew extends Component {
                      </label>
                   </div>
 
-                  <div className="BeerNew-div-row">
-                     <button className="BeerNew-submit-button">Submit</button>
+                  <div className="BeerNew-div-row BeerNew-submit-button">
+                     <Button label="Submit" />
                   </div>
 
                </form>
@@ -363,7 +366,8 @@ class BeerNew extends Component {
             <div>
                <Cancel />
             </div>
-            {snackBarGreenOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
+            {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}
          </div >
       )
    }

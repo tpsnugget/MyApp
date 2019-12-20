@@ -3,7 +3,9 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import Cancel from "../../../../components/Cancel"
-import Snackbar from "../../../Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
+import Button from "../../../Atoms/Button/Button"
 import axios from "axios"
 import "../css/RestaurantNew.css"
 
@@ -28,6 +30,7 @@ class RestaurantNew extends Component {
          cuisine: "",
          price: "",
          snackBarGreenOpen: false,
+         snackBarRedOpen: false,
          msg: "",
          addRestaurantSuccessful: false
       }
@@ -67,12 +70,12 @@ class RestaurantNew extends Component {
             console.log(response)
             if (response.data.name === "MongoError") {
                this.setState({
-                  snackBarGreenOpen: true,
+                  snackBarRedOpen: true,
                   msg: "Restaurant was not added..."
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarGreenOpen: false,
+                     snackBarRedOpen: false,
                      msg: ""
                   })
                }, 2000);
@@ -95,7 +98,7 @@ class RestaurantNew extends Component {
 
    render() {
 
-      const { addRestaurantSuccessful, snackBarGreenOpen } = this.state
+      const { addRestaurantSuccessful, snackBarGreenOpen, snackBarRedOpen } = this.state
 
       return (
          <div className="RestaurantNew-main-container">
@@ -327,8 +330,8 @@ class RestaurantNew extends Component {
                      </label>
                   </div>
 
-                  <div className="RestaurantNew-div-row">
-                     <button className="RestaurantNew-submit-button">Submit</button>
+                  <div className="RestaurantNew-div-row RestaurantNew-submit-button">
+                     <Button label="Submit" />    
                   </div>
 
                </form>
@@ -337,7 +340,8 @@ class RestaurantNew extends Component {
             <div>
                <Cancel />
             </div>
-            {snackBarGreenOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
+            {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}
          </div >
       )
    }
