@@ -1,17 +1,19 @@
 import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
-import Snackbar from "./Snackbar"
+import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
 import axios from "axios"
 import "../css/Login.css"
 
-class Login extends Component{
+class Login extends Component {
 
-   constructor(props){
+   constructor(props) {
       super(props)
       this.state = {
          username: "",
          password: "",
-         snackBarOpen: false,
+         snackBarGreenOpen: false,
+         snackBarRedOpen: false,
          msg: "",
          goodLogin: false
       }
@@ -19,13 +21,13 @@ class Login extends Component{
       this.handleSubmit = this.handleSubmit.bind(this)
    }
 
-   handleChange(e){
+   handleChange(e) {
       this.setState({
          [e.target.name]: e.target.value
       })
    }
 
-   handleSubmit(e){
+   handleSubmit(e) {
       e.preventDefault()
 
       axios.get("http://localhost:9000/users", {
@@ -33,91 +35,94 @@ class Login extends Component{
             username: this.state.username.toLowerCase()
          }
       })
-         .then( (response) => {
+         .then((response) => {
 
-            if(response.data._id){
-               if(response.data.password === this.state.password){
+            if (response.data._id) {
+               if (response.data.password === this.state.password) {
                   this.setState({
-                     snackBarOpen: true,
+                     snackBarGreenOpen: true,
                      msg: "Login was successful"
                   })
                   setTimeout(() => {
                      this.props.updateLoggedInName(this.state.username.toLowerCase())
                      this.setState({
-                        snackBarOpen: false,
+                        snackBarGreenOpen: false,
                         msg: "",
                         goodLogin: true
                      })
                   }, 2000);
                }
-               else{
+               else {
                   this.setState({
-                     snackBarOpen: true,
+                     snackBarRedOpen: true,
                      msg: "Login not successful"
                   })
                   setTimeout(() => {
                      this.setState({
-                        snackBarOpen: false,
+                        snackBarRedOpen: false,
                         msg: ""
                      })
                   }, 2000);
                }
             }
-            else if(response.data === ""){
+            else if (response.data === "") {
                this.setState({
-                  snackBarOpen: true,
+                  snackBarRedOpen: true,
                   msg: "Login not successful"
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarOpen: false,
+                     snackBarRedOpen: false,
                      msg: ""
                   })
                }, 2000);
             }
 
-         } )
-         .catch( (error) => {
+         })
+         .catch((error) => {
             console.error("Login Component received error: ", error)
          })
    }
 
-   render(){
+   render() {
 
-      const { snackBarOpen, goodLogin } = this.state
+      const { snackBarGreenOpen, snackBarRedOpen, goodLogin } = this.state
 
-      return(
+      return (
          <Fragment>
             {goodLogin && <Redirect to="/landing" />}
-         <div className="Login">
-            <div className="Login-header">
-               <h4 className="Login-header-h4">Login</h4>
-            </div>
-            <div className="Login-main-div">
-               <form onSubmit={this.handleSubmit}>
+            <div className="Login">
+               <div className="Login-header">
+                  <h4 className="Login-header-h4">Login</h4>
+               </div>
+               <div className="Login-main-div">
+                  <form action="" method="get" onSubmit={this.handleSubmit}>
 
-                  <div className="Login-row">
-                     <span className="Login-inner-span">
-                        <label className="Login-label">
-                           Username:
-                  <div><input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
-                           </div>
-                        </label>
-                     </span>
-                     <span className="Login-inner-span">
-                        <label className="Login-label">
-                           Password:
-                  <div><input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
-                           </div>
-                        </label>
-                     </span>
-                  </div>
+                     <div className="Login-row">
+                        <span className="Login-inner-span">
+                           <label className="Login-label">
+                              Username:
+                              <div>
+                                 <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
+                              </div>
+                           </label>
+                        </span>
+                        <span className="Login-inner-span">
+                           <label className="Login-label">
+                              Password:
+                              <div>
+                                 <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+                              </div>
+                           </label>
+                        </span>
+                     </div>
 
-                  <button>Submit</button>
-               </form>
+                     <button>Submit</button>
+                  </form>
+               </div>
             </div>
-         </div>
-         {snackBarOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
+            {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}
          </Fragment>
       )
    }

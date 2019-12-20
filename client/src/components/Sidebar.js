@@ -9,6 +9,11 @@ class Sidebar extends Component{
       this.state = {
          data: []
       }
+      this.handleClick = this.handleClick.bind(this)
+   }
+
+   handleClick(e){
+      
    }
 
    componentDidMount(){
@@ -16,7 +21,9 @@ class Sidebar extends Component{
       const url = `http://localhost:9000/${this.props.name.toLowerCase()}`
 
       axios.get(url, {
-         params: {  }
+         params: { 
+
+          }
       })
          .then((response) => {
             if (response.data === "") {
@@ -45,6 +52,7 @@ class Sidebar extends Component{
                   src={item.image}
                   alt={item.name}
                   className="Sidebar-img"
+                  onClick={this.handleClick}
                />
                {i < this.state.data.length - 1 ? <hr /> : ""}
             </div>

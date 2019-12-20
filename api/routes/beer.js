@@ -30,8 +30,8 @@ const Beer = mongoose.model("Beer", beerSchema)
 
 /* Get Beer */
 router.get('/', function (req, res) {
-  // console.log("Get req.query: ", req.query)
-  Beer.find(req.query, function (err, foundBeer) {
+  console.log("Get Beer req.query: ", req.query)
+  Beer.find(req.query, {name: 1, image: 1}, function (err, foundBeer) {
     if (err) {
       console.error("User Get Route Error: ", err)
       res.send(err)

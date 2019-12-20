@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
-import Snackbar from "./Snackbar"
+import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
+import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
 import axios from "axios"
 import "../css/User.css"
 
@@ -15,7 +16,8 @@ class User extends Component {
          email: "",
          password: "",
          password2: "",
-         snackBarOpen: false,
+         snackBarGreenOpen: false,
+         snackBarRedOpen: false,
          msg: "",
          goodLogin: false
       }
@@ -43,12 +45,12 @@ class User extends Component {
                console.log("User Component response: ", response)
                if (response.data._id) {
                   this.setState({
-                     snackBarOpen: true,
+                     snackBarGreenOpen: true,
                      msg: "Signup Successful"
                   })
                   setTimeout(() => {
                      this.setState({
-                        snackBarOpen: false,
+                        snackBarGreenOpen: false,
                         msg: "",
                         goodLogin: true
                      })
@@ -56,7 +58,7 @@ class User extends Component {
                }
                else if (response.data.name === "MongoError") {
                   this.setState({
-                     snackBarOpen: true,
+                     snackBarRedOpen: true,
                      msg: "Those login credentials are already in use"
                   })
                   setTimeout(() => {
@@ -67,14 +69,14 @@ class User extends Component {
                         email: "",
                         password: "",
                         password2: "",
-                        snackBarOpen: false,
+                        snackBarRedOpen: false,
                         msg: ""
                      })
                   }, 2000);
                }
                else if (response.data._message === "User validation failed") {
                   this.setState({
-                     snackBarOpen: true,
+                     snackBarRedOpen: true,
                      msg: "An error occurred during signup"
                   })
                   setTimeout(() => {
@@ -85,7 +87,7 @@ class User extends Component {
                         email: "",
                         password: "",
                         password2: "",
-                        snackBarOpen: false,
+                        snackBarRedOpen: false,
                         msg: ""
                      })
                   }, 2000);
@@ -97,7 +99,7 @@ class User extends Component {
       }
       else {
          this.setState({
-            snackBarOpen: true,
+            snackBarRedOpen: true,
             msg: "Passwords entered are not identical"
          })
          setTimeout(() => {
@@ -108,7 +110,7 @@ class User extends Component {
                email: "",
                password: "",
                password2: "",
-               snackBarOpen: false,
+               snackBarRedOpen: false,
                msg: ""
             })
          }, 2000);
@@ -119,7 +121,7 @@ class User extends Component {
    render() {
 
       // const { isLoggedIn } = this.props
-      const { first, last, username, email, password, password2, goodLogin } = this.state
+      const { first, last, username, email, password, password2, goodLogin, snackBarGreenOpen, snackBarRedOpen } = this.state
 
       return (
          <Fragment>
@@ -186,7 +188,8 @@ class User extends Component {
                   </form>
                </div>
             </div>
-            {this.state.snackBarOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
+            {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}
          </Fragment>
       )
    }

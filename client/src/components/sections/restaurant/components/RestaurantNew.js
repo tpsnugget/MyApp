@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import Cancel from "../../../../components/Cancel"
-import Snackbar from "../../../../components/Snackbar"
+import Snackbar from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import axios from "axios"
 import "../css/RestaurantNew.css"
 
@@ -27,7 +27,7 @@ class RestaurantNew extends Component {
          rating: "",
          cuisine: "",
          price: "",
-         snackBarOpen: false,
+         snackBarGreenOpen: false,
          msg: "",
          addRestaurantSuccessful: false
       }
@@ -67,23 +67,23 @@ class RestaurantNew extends Component {
             console.log(response)
             if (response.data.name === "MongoError") {
                this.setState({
-                  snackBarOpen: true,
+                  snackBarGreenOpen: true,
                   msg: "Restaurant was not added..."
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarOpen: false,
+                     snackBarGreenOpen: false,
                      msg: ""
                   })
                }, 2000);
             } else {
                this.setState({
-                  snackBarOpen: true,
+                  snackBarGreenOpen: true,
                   msg: "Restaurant was added!"
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarOpen: false,
+                     snackBarGreenOpen: false,
                      msg: "",
                      addRestaurantSuccessful: true
                   })
@@ -95,7 +95,7 @@ class RestaurantNew extends Component {
 
    render() {
 
-      const { addRestaurantSuccessful, snackBarOpen } = this.state
+      const { addRestaurantSuccessful, snackBarGreenOpen } = this.state
 
       return (
          <div className="RestaurantNew-main-container">
@@ -337,7 +337,7 @@ class RestaurantNew extends Component {
             <div>
                <Cancel />
             </div>
-            {snackBarOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <Snackbar msg={this.state.msg} />}
          </div >
       )
    }

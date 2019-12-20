@@ -1,0 +1,14 @@
+.LinkButton-link-new {
+   border: 1px solid darkgray;
+   border-radius: 0.25rem;
+   font-size: 1.2rem;
+   font-weight: 500;
+   letter-spacing: 0.1rem;
+   text-decoration: none;
+   color: black;
+   padding: 0.25rem 0.5rem;
+}
+
+.LinkButton-div {
+   margin: 2rem 4rem;
+}
