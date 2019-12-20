@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import Cancel from "../../../../components/Cancel"
-import Snackbar from "../../../../components/Snackbar"
+import Snackbar from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import axios from "axios"
 import "../css/BeerNew.css"
 
@@ -30,7 +30,7 @@ class BeerNew extends Component {
          abv: "",
          ibu: "",
          rating: "",
-         snackBarOpen: false,
+         snackBarGreenOpen: false,
          msg: "",
          addBeerSuccessful: false
       }
@@ -70,26 +70,26 @@ class BeerNew extends Component {
 
       axios.post("http://localhost:9000/beer", newBeer)
          .then((response) => {
-            console.log(response)
+            // console.log(response)
             if (response.data.name === "MongoError") {
                this.setState({
-                  snackBarOpen: true,
+                  snackBarGreenOpen: true,
                   msg: "Beer was not added..."
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarOpen: false,
+                     snackBarGreenOpen: false,
                      msg: ""
                   })
                }, 2000);
             } else {
                this.setState({
-                  snackBarOpen: true,
+                  snackBarGreenOpen: true,
                   msg: "Beer was added!"
                })
                setTimeout(() => {
                   this.setState({
-                     snackBarOpen: false,
+                     snackBarGreenOpen: false,
                      msg: "",
                      addBeerSuccessful: true
                   })
@@ -101,7 +101,7 @@ class BeerNew extends Component {
 
    render() {
 
-      const { addBeerSuccessful, snackBarOpen } = this.state
+      const { addBeerSuccessful, snackBarGreenOpen } = this.state
 
       return (
          <div className="BeerNew-main-container">
@@ -363,7 +363,7 @@ class BeerNew extends Component {
             <div>
                <Cancel />
             </div>
-            {snackBarOpen && <Snackbar msg={this.state.msg} />}
+            {snackBarGreenOpen && <Snackbar msg={this.state.msg} />}
          </div >
       )
    }

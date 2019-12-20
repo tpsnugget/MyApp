@@ -5,13 +5,6 @@ import "../css/Restaurant.css"
 
 class Restaurant extends Component{
 
-   constructor(props){
-      super(props)
-      this.state = {
-
-      }
-   }
-
    render(){
 
       return(
