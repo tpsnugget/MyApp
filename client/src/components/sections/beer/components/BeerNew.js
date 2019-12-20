@@ -6,6 +6,9 @@ import Cancel from "../../../../components/Cancel"
 import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
 import Button from "../../../Atoms/Button/Button"
+import InputText from "../../../Atoms/InputText/InputText"
+import InputTextDoubleLength from "../../../Atoms/InputTextDoubleLength/InputTextDoubleLength"
+import InputTextTripleLength from "../../../Atoms/InputTextTripleLength/InputTextTripleLength"
 import axios from "axios"
 import "../css/BeerNew.css"
 
@@ -113,141 +116,40 @@ class BeerNew extends Component {
                <h1 className="BeerNew-h1">Add a New Beer</h1>
                <form
                   className="BeerNew-form"
-                  onSubmit={this.handleSubmit}
-               >
-
+                  onSubmit={this.handleSubmit} >
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">Beer Name:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="name"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-
-                     <label className="BeerNew-label"><span className="BeerNew-span">Brewery Name:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="brewery"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Beer Name:" type="text" name="name" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Brewery Name:" type="text" name="brewery" inputClassName="BeerNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">Street Address:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="streetAddress"
-                              className="BeerNew-input-address BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextDoubleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Street Address:" type="text" name="streetAddress" inputClassName="BeerNew-input-address" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">City:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="city"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">State:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="state"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Zip Code:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="zip"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="City:" type="text" name="city" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="State:" type="text" name="state" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Zip Code:" type="text" name="zip" inputClassName="BeerNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                  <label className="BeerNew-label"><span className="BeerNew-span">Phone:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="phone"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Latitude:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="latitude"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Longitude:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="longitude"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Phone:" type="text" name="phone" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Latitude:" type="text" name="latitude" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Longitude:" type="text" name="longitude" inputClassName="BeerNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">Beer Image URL:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="image"
-                              className="BeerNew-input-image BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextTripleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Beer Image URL:" type="text" name="image" inputClassName="BeerNew-input-image BeerNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">Website URL:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="website"
-                              className="BeerNew-input-image BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextTripleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Website URL:" type="text" name="website" inputClassName="BeerNew-input-image BeerNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                  <label className="BeerNew-label"><span className="BeerNew-span">Beer Type:</span>
+                  
+                     <label className="BeerNew-label"><span className="BeerNew-span">Beer Type:</span>
                         <div>
                            <select
                               type="text"
@@ -324,36 +226,11 @@ class BeerNew extends Component {
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">ABV:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="abv"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">IBU:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="ibu"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Rating:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="rating"
-                              className="BeerNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="ABV:" type="text" name="abv" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="IBU:" type="text" name="ibu" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Rating:" type="text" name="rating" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+
                   </div>
 
                   <div className="BeerNew-div-row BeerNew-submit-button">

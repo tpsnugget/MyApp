@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import "./InputText.css"
+import "./InputSelect.css"
 
-class InputText extends Component {
+class InputSelect extends Component {
 
    static propTypes = {
       /* Used for CSS styling */
@@ -21,7 +21,10 @@ class InputText extends Component {
       name: PropTypes.string,
 
       /* label is what is displayed on top of the input box for the user */
-      label: PropTypes.string
+      label: PropTypes.string,
+
+      /* options are for the select type input */
+      options: PropTypes.object
    }
 
    constructor(props){
@@ -36,21 +39,27 @@ class InputText extends Component {
 
    render() {
 
-      const { className, spanClassName, inputClassName, type, name, label } = this.props
+      const { className, spanClassName, inputClassName, type, name, label, options } = this.props
+
+      const Options = options.map( (option) => {
+         console.log("option: ", option)
+         return option
+      } )
 
       return (
          <label className={className}><span className={spanClassName}>{label}</span>
             <div>
-               <input
+               <select
                   type={type}
                   name={name}
                   className={inputClassName}
                   onChange={this.handleChangeHere}
-               />
+               >
+               </select>
             </div>
          </label>
       )
    }
 }
 
-export default InputText
+export default InputSelect

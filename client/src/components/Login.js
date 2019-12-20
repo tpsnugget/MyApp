@@ -100,6 +100,7 @@ class Login extends Component {
                   <form action="" method="get" onSubmit={this.handleSubmit}>
 
                      <div className="Login-row">
+
                         <span className="Login-inner-span">
                            <label className="Login-label">
                               Username:
@@ -108,6 +109,7 @@ class Login extends Component {
                               </div>
                            </label>
                         </span>
+
                         <span className="Login-inner-span">
                            <label className="Login-label">
                               Password:
@@ -116,6 +118,7 @@ class Login extends Component {
                               </div>
                            </label>
                         </span>
+                        
                      </div>
 
                      <Button label="Submit" />

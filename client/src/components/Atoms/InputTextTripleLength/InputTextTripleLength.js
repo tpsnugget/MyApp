@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import "./InputText.css"
+import "./InputTextTripleLength.css"
 
-class InputText extends Component {
+class InputTextTripleLength extends Component {
 
    static propTypes = {
       /* Used for CSS styling */
@@ -53,4 +53,4 @@ class InputText extends Component {
    }
 }
 
-export default InputText
+export default InputTextTripleLength

@@ -19,28 +19,6 @@
    display: flex;
 }
 
-.BeerNew-label {
-   margin: 8px 16px;
-   text-align: start;
-}
-
-.BeerNew-span {
-   margin-left: 4px;
-}
-
-.BeerNew-input {
-   width: 250px;
-   margin-left: 0;
-}
-
-.BeerNew-input-address {
-   width: 532px;
-}
-
-.BeerNew-input-image {
-   width: 826px;
-}
-
 .BeerNew-select {
    width: 250px;
    height: 39px;

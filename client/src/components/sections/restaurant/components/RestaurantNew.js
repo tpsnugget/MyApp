@@ -6,6 +6,9 @@ import Cancel from "../../../../components/Cancel"
 import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
 import Button from "../../../Atoms/Button/Button"
+import InputText from "../../../Atoms/InputText/InputText"
+import InputTextDoubleLength from "../../../Atoms/InputTextDoubleLength/InputTextDoubleLength"
+import InputTextTripleLength from "../../../Atoms/InputTextTripleLength/InputTextTripleLength"
 import axios from "axios"
 import "../css/RestaurantNew.css"
 
@@ -112,176 +115,36 @@ class RestaurantNew extends Component {
 
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Restaurant Name:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="name"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-
-                     {/* <label className="RestaurantNew-label"><span className="RestaurantNew-span">Brewery Name:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="brewery"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label> */}
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Restaurant Name:" type="text" name="name" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Street Address:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="streetAddress"
-                              className="RestaurantNew-input-address RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextDoubleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Street Address:" type="text" name="streetAddress" inputClassName="RestaurantNew-input-address RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">City:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="city"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">State:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="state"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Zip Code:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="zip"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="City:" type="text" name="city" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="State:" type="text" name="state" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Zip Code:" type="text" name="zip" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Phone:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="phone"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Latitude:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="latitude"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Longitude:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="longitude"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Phone:" type="text" name="phone" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Latitude:" type="text" name="latitude" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Longitude:" type="text" name="longitude" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Restaurant Image URL:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="image"
-                              className="RestaurantNew-input-image RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextTripleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Restaurant Image URL:" type="text" name="image" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Website URL:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="website"
-                              className="RestaurantNew-input-image RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputTextTripleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Website URL:" type="text" name="website" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     {/* <label className="RestaurantNew-label"><span className="RestaurantNew-span">ABV:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="abv"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">IBU:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="ibu"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label> */}
-
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Favorite Food:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="favFood"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
-                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Rating:</span>
-                        <div>
-                           <input
-                              type="text"
-                              name="rating"
-                              className="RestaurantNew-input"
-                              onChange={this.handleChange}
-                           />
-                        </div>
-                     </label>
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Favorite Food:" type="text" name="favFood" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Rating:" type="text" name="rating" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
@@ -331,7 +194,7 @@ class RestaurantNew extends Component {
                   </div>
 
                   <div className="RestaurantNew-div-row RestaurantNew-submit-button">
-                     <Button label="Submit" />    
+                     <Button label="Submit" />
                   </div>
 
                </form>
