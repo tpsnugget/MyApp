@@ -12,7 +12,7 @@ class Mininavbar extends Component {
 
       /* Passed down from one of the four main landing pages.
          Use to customize the Mininavbar */
-      chosenID: PropTypes.string,
+      chosenId: PropTypes.string,
 
       /* Passed down from one of the four main landing pages.
          Used to customize the Mininavbar */

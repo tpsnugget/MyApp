@@ -5,7 +5,8 @@ import axios from "axios"
 import PropTypes from "prop-types"
 import Sidebar from "../../../../components/Sidebar"
 import Mininavbar from "../../../../components/Mininavbar"
-import Cancel from "../../../../components/Cancel"
+import CancelLink from "../../../Atoms/CancelLink/CancelLink"
+import BeerShow from "./BeerShow"
 import "../css/Beer.css"
 
 
@@ -16,30 +17,30 @@ class Beer extends Component {
       name: PropTypes.string,
 
       /* Passed down from App.js. Used to determine if active user is the one
-         who added the selected beer to the db. They are the only one who can
-         Edit or Delete the selected beer. */
+         who added the selected BEER to the db. They are the only one who can
+         Edit or Delete the selected BEER. */
       loggedInName: PropTypes.string
    }
 
-   constructor(props){
+   constructor(props) {
       super(props)
       this.state = {
-         chosenID: "",
+         chosenId: "",
          data: []
       }
       this.handleClick = this.handleClick.bind(this)
    }
 
-   handleClick(e){
+   handleClick(id) {
       // console.log("Beer Component, e: ", e)
       this.setState({
-         chosenID: e
+         chosenId: id
       })
 
       axios.get("http://localhost:9000/beer", {
-         params: { 
-            _id: e
-          }
+         params: {
+            _id: id
+         }
       })
          .then((response) => {
             if (response.data === "") {
@@ -56,21 +57,29 @@ class Beer extends Component {
 
    render() {
 
+      const { chosenId, data } = this.state
       const { addedBy } = this.state.data
-      const { loggedInName } = this.props
+      const { loggedInName, name } = this.props
 
 
-      console.log("Beer Component, addedBy: ", addedBy)
-      console.log("Beer Component, loggedInName: ", loggedInName)
+      // console.log("Beer Component, addedBy: ", addedBy)
+      // console.log("Beer Component, loggedInName: ", loggedInName)
 
       const allowedToModifySelection = (addedBy === loggedInName ? true : false)
 
       return (
          <div className="Beer-main-container">
-            <Sidebar name={this.props.name} select={this.handleClick}/>
-            <Mininavbar name={this.props.name} chosenID={this.state.chosenID} allowedToModifySelection={allowedToModifySelection}/>
-            <div className="Beer-cancel">
-               <Cancel />
+            <div className="Beer-nav-container">
+               <Sidebar name={name} select={this.handleClick} />
+               <div className="Beer-inner-container">
+                  <Mininavbar name={name} chosenId={chosenId} allowedToModifySelection={allowedToModifySelection} />
+                  <div>
+                     {(chosenId !== "") && <BeerShow data={data} />}
+                  </div>
+                  <div className="Beer-cancel">
+                     <CancelLink />
+                  </div>
+               </div>
             </div>
          </div>
       )

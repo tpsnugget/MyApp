@@ -1,4 +1,4 @@
-.LinkButton-link-new {
+.CancelLink-button {
    padding: 0.5rem 1rem;
    border-radius: 0.45rem;
    border: 1px solid black;
@@ -6,16 +6,20 @@
    font-weight: 600;
    letter-spacing: 0.15rem;
    margin-bottom: 1rem;
-   text-decoration: none;
-   color: black;
 }
 
-.LinkButton-link-new:hover {
+.CancelLink-button:hover {
    border: 1px solid darkgray;
    background-color: rgba(211, 211, 211, 0.226);
    font-weight: 700;
 }
 
-.LinkButton-div {
-   margin: 2rem 4rem;
+/* .CancelLink-link {
+   text-decoration: none;
+   color: black;
+} */
+
+.CancelLink-div {
+   display: flex;
+   margin: 0 48px;
 }

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
 import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
+import InputText from "./Atoms/InputText/InputText"
 import Button from "./Atoms/Button/Button"
 import axios from "axios"
 import "../css/User.css"
@@ -122,7 +123,7 @@ class User extends Component {
    render() {
 
       // const { isLoggedIn } = this.props
-      const { first, last, username, email, password, password2, goodLogin, snackBarGreenOpen, snackBarRedOpen } = this.state
+      const { goodLogin, snackBarGreenOpen, snackBarRedOpen } = this.state
 
       return (
          <Fragment>
@@ -135,55 +136,18 @@ class User extends Component {
                   <form onSubmit={this.handleSubmit}>
 
                      <div className="User-row">
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              First Name:
-                           <div>
-                                 <input type="text" name="first" value={first} placeholder="First Name" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              Last Name:
-                  <div><input type="text" name="last" value={last} placeholder="Last Name" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
+                     <InputText type="text" label="First Name:" name="first" placeholder="First Name" handleChange={this.handleChange} />
+                     <InputText type="text" label="Last Name:" name="last" placeholder="Last Name" handleChange={this.handleChange} />
                      </div>
 
                      <div className="User-row">
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              Username:
-                  <div><input type="text" name="username" value={username} placeholder="Username" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              Email:
-                  <div><input type="email" name="email" value={email} placeholder="Email" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
+                     <InputText type="text" label="Username:" name="username" placeholder="Username" handleChange={this.handleChange} />
+                     <InputText type="email" label="Email:" name="email" placeholder="Email" handleChange={this.handleChange} />
                      </div>
 
                      <div className="User-row">
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              Password:
-                  <div><input type="password" name="password" value={password} placeholder="Password" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
-                        <span className="User-inner-span">
-                           <label className="User-label">
-                              Re-enter Password:
-                  <div><input type="password" name="password2" value={password2} placeholder="Password" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
+                     <InputText type="password" label="Password:" name="password" placeholder="Password" handleChange={this.handleChange} />
+                     <InputText type="password" label="Re-Enter Password:" name="password2" placeholder="Password" handleChange={this.handleChange} />
                      </div>
                      <Button label="Submit"/>
                   </form>

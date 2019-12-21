@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import PropTypes from "prop-types"
-import Cancel from "../../../../components/Cancel"
+import CancelLink from "../../../Atoms/CancelLink/CancelLink"
 import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
 import Button from "../../../Atoms/Button/Button"
@@ -108,11 +108,12 @@ class RestaurantNew extends Component {
 
    render() {
 
-      const { addRestaurantSuccessful, snackBarGreenOpen, snackBarRedOpen } = this.state
+      const { addRestaurantSuccessful, snackBarGreenOpen, snackBarRedOpen, cancel } = this.state
 
       return (
          <div className="RestaurantNew-main-container">
             {addRestaurantSuccessful && <Redirect to="/restaurant" />}
+            {cancel && <Redirect to="/landing" />}
             <div className="RestaurantNew-form-container">
                <h1 className="RestaurantNew-h1">Add a New Restaurant</h1>
                <form
@@ -120,47 +121,46 @@ class RestaurantNew extends Component {
                   onSubmit={this.handleSubmit}
                >
 
-
                   <div className="RestaurantNew-div-row">
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Restaurant Name:" type="text" name="name" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText label="Restaurant Name:" type="text" name="name" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputTextDoubleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Street Address:" type="text" name="streetAddress" inputClassName="RestaurantNew-input-address RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputTextDoubleLength label="Street Address:" type="text" name="streetAddress" inputClassName="RestaurantNew-input-address RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="City:" type="text" name="city" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="State:" type="text" name="state" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Zip Code:" type="text" name="zip" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText label="City:" type="text" name="city" handleChange={this.handleChange} />
+                     <InputText label="State:" type="text" name="state" handleChange={this.handleChange} />
+                     <InputText label="Zip Code:" type="text" name="zip" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Phone:" type="text" name="phone" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Latitude:" type="text" name="latitude" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Longitude:" type="text" name="longitude" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText label="Phone:" type="text" name="phone" handleChange={this.handleChange} />
+                     <InputText label="Latitude:" type="text" name="latitude" handleChange={this.handleChange} />
+                     <InputText label="Longitude:" type="text" name="longitude" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputTextTripleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Restaurant Image URL:" type="text" name="image" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputTextTripleLength label="Restaurant Image URL:" type="text" name="image" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputTextTripleLength className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Website URL:" type="text" name="website" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputTextTripleLength label="Website URL:" type="text" name="website" inputClassName="RestaurantNew-input-image RestaurantNew-input" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Favorite Food:" type="text" name="favFood" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
-                     <InputText className="RestaurantNew-label" spanClassName="RestaurantNew-span" label="Rating:" type="text" name="rating" inputClassName="RestaurantNew-input" handleChange={this.handleChange} />
+                     <InputText label="Favorite Food:" type="text" name="favFood" handleChange={this.handleChange} />
+                     <InputText label="Rating:" type="text" name="rating" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row">
-                     <label className="BeerNew-label"><span className="BeerNew-span">Cuisine:</span>
+                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Cuisine:</span>
                         <div>
                            <select
                               type="text"
                               name="cuisine"
-                              className="BeerNew-select"
+                              className="RestaurantNew-select"
                               onChange={this.handleChange}>
                               <option value="">Select a Cuisine</option>
                               <option value="american">American</option>
@@ -177,12 +177,12 @@ class RestaurantNew extends Component {
                            </select>
                         </div>
                      </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Cost:</span>
+                     <label className="RestaurantNew-label"><span className="RestaurantNew-span">Cost:</span>
                         <div>
                            <select
                               type="text"
                               name="price"
-                              className="BeerNew-select"
+                              className="RestaurantNew-select"
                               onChange={this.handleChange}>
                               <option value="">Total Price Per Person</option>
                               <option value="under10">Less than $10 each</option>
@@ -207,9 +207,9 @@ class RestaurantNew extends Component {
                </form>
             </div>
 
-            <div>
-               <Cancel />
-            </div>
+               <div>
+                  <CancelLink />
+               </div>
             {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
             {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}
          </div >

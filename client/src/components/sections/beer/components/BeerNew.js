@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import PropTypes from "prop-types"
-import Cancel from "../../../../components/Cancel"
+import CancelLink from "../../../Atoms/CancelLink/CancelLink"
 import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
 import Button from "../../../Atoms/Button/Button"
@@ -126,37 +126,37 @@ class BeerNew extends Component {
                   onSubmit={this.handleSubmit} >
 
                   <div className="BeerNew-div-row">
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Beer Name:" type="text" name="name" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Brewery Name:" type="text" name="brewery" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText label="Beer Name:" type="text" name="name" handleChange={this.handleChange} />
+                     <InputText label="Brewery Name:" type="text" name="brewery" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputTextDoubleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Street Address:" type="text" name="streetAddress" inputClassName="BeerNew-input-address" handleChange={this.handleChange} />
+                     <InputTextDoubleLength className="InputTextDoubleLength-label" spanClassName="InputTextDoubleLength-span" label="Street Address:" type="text" name="streetAddress" inputClassName="InputTextDoubleLength-input-address" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="City:" type="text" name="city" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="State:" type="text" name="state" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Zip Code:" type="text" name="zip" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText label="City:" type="text" name="city" handleChange={this.handleChange} />
+                     <InputText label="State:" type="text" name="state" handleChange={this.handleChange} />
+                     <InputText label="Zip Code:" type="text" name="zip" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Phone:" type="text" name="phone" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Latitude:" type="text" name="latitude" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Longitude:" type="text" name="longitude" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText label="Phone:" type="text" name="phone" handleChange={this.handleChange} />
+                     <InputText label="Latitude:" type="text" name="latitude" handleChange={this.handleChange} />
+                     <InputText label="Longitude:" type="text" name="longitude" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputTextTripleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Beer Image URL:" type="text" name="image" inputClassName="BeerNew-input-image BeerNew-input" handleChange={this.handleChange} />
+                     <InputTextTripleLength label="Beer Image URL:" type="text" name="image" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputTextTripleLength className="BeerNew-label" spanClassName="BeerNew-span" label="Website URL:" type="text" name="website" inputClassName="BeerNew-input-image BeerNew-input" handleChange={this.handleChange} />
+                     <InputTextTripleLength label="Website URL:" type="text" name="website" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
                   
-                     <label className="BeerNew-label"><span className="BeerNew-span">Beer Type:</span>
+                     <label className="InputText-label"><span className="InputText-span">Beer Type:</span>
                         <div>
                            <select
                               type="text"
@@ -183,7 +183,7 @@ class BeerNew extends Component {
                            </select>
                         </div>
                      </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Beer Color:</span>
+                     <label className="InputText-label"><span className="InputText-span">Beer Color:</span>
                         <div>
                            <select
                               type="text"
@@ -207,7 +207,7 @@ class BeerNew extends Component {
                            </select>
                         </div>
                      </label>
-                     <label className="BeerNew-label"><span className="BeerNew-span">Recommended Glassware:</span>
+                     <label className="InputText-label"><span className="InputText-span">Recommended Glassware:</span>
                         <div>
                            <select
                               type="text"
@@ -234,9 +234,9 @@ class BeerNew extends Component {
 
                   <div className="BeerNew-div-row">
 
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="ABV:" type="text" name="abv" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="IBU:" type="text" name="ibu" inputClassName="BeerNew-input" handleChange={this.handleChange} />
-                     <InputText className="BeerNew-label" spanClassName="BeerNew-span" label="Rating:" type="text" name="rating" inputClassName="BeerNew-input" handleChange={this.handleChange} />
+                     <InputText label="ABV:" type="text" name="abv" handleChange={this.handleChange} />
+                     <InputText label="IBU:" type="text" name="ibu" handleChange={this.handleChange} />
+                     <InputText label="Rating:" type="text" name="rating" handleChange={this.handleChange} />
 
                   </div>
 
@@ -248,7 +248,7 @@ class BeerNew extends Component {
             </div>
 
             <div>
-               <Cancel />
+               <CancelLink />
             </div>
             {snackBarGreenOpen && <SnackbarGreen msg={this.state.msg} />}
             {snackBarRedOpen && <SnackbarRed msg={this.state.msg} />}

@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom"
 import PropTypes from "prop-types"
 import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
+import InputText from "./Atoms/InputText/InputText"
 import Button from "./Atoms/Button/Button"
 import axios from "axios"
 import "../css/Login.css"
@@ -107,25 +108,8 @@ class Login extends Component {
                   <form action="" method="get" onSubmit={this.handleSubmit}>
 
                      <div className="Login-row">
-
-                        <span className="Login-inner-span">
-                           <label className="Login-label">
-                              Username:
-                              <div>
-                                 <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
-
-                        <span className="Login-inner-span">
-                           <label className="Login-label">
-                              Password:
-                              <div>
-                                 <input type="password" name="password" placeholder="Password" onChange={this.handleChange} />
-                              </div>
-                           </label>
-                        </span>
-                        
+                        <InputText type="text" label="Username:" name="username" placeholder="Username" handleChange={this.handleChange}/>
+                        <InputText type="password" label="Password:" name="password" placeholder="Password" handleChange={this.handleChange}/>                   
                      </div>
 
                      <Button label="Submit" />

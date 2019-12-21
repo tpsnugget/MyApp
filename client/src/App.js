@@ -8,6 +8,7 @@ import Login from "./components/Login"
 import Beer from "./components/sections/beer/components/Beer"
 import BeerNew from "./components/sections/beer/components/BeerNew"
 import Recipe from "./components/sections/recipe/components/Recipe"
+import RecipeNew from "./components/sections/recipe/components/RecipeNew"
 import Restaurant from "./components/sections/restaurant/components/Restaurant"
 import RestaurantNew from "./components/sections/restaurant/components/RestaurantNew"
 import RV from "./components/sections/rv/components/RV"
@@ -68,6 +69,9 @@ class App extends Component {
           <Route exact path="/recipe">
             {isLoggedIn && <Recipe name="Recipe"/>}
           </Route>
+          <Route exact path="/recipe/new">
+            {isLoggedIn && <RecipeNew username={loggedInName}/>}
+          </Route>
 
           <Route exact path="/restaurant">
             {isLoggedIn && <Restaurant name="Restaurant"/>}
@@ -81,6 +85,7 @@ class App extends Component {
           </Route>
 
         </Switch>
+
       </div>
     );
   }

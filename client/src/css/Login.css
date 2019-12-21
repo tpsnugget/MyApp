@@ -41,27 +41,7 @@
    margin-right: 1rem;
 }
 
-input {
-   width: 250px;
-   height: 35px;
-   margin-left: 1rem;
-   margin-top: 0.25rem;
-   border-radius: 0.35rem;
-   border: 1px solid lightgray;
-}
-
-label {
-   font-size: 0.85rem;
-   font-weight: bold;
-}
-
-input::placeholder {
-   font-size: 1.2rem;
-   padding-left: 0.5rem;
-   color: lightgray;
-}
-
-button {
+/* button {
    padding: 0.5rem 1rem;
    border-radius: 0.45rem;
    border: 1px solid black;
@@ -75,4 +55,4 @@ button:hover {
    border: 1px solid darkgray;
    background-color: rgba(211, 211, 211, 0.226);
    font-weight: 700;
-}
+} */
