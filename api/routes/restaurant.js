@@ -33,7 +33,7 @@ const Restaurant = mongoose.model("Restaurant", restaurantSchema)
 
 /* Get Restaurant */
 router.get('/', function (req, res) {
-  console.log("Get req.query: ", req.query)
+  // console.log("Get req.query: ", req.query)
   Restaurant.find(req.query, function (err, foundRestaurant) {
     if (err) {
       console.error("User Get Route Error: ", err)
@@ -48,14 +48,14 @@ router.get('/', function (req, res) {
 
 /* Add A New Restaurant */
 router.post("/", function (req, res) {
-  console.log("User Post Route req.body", req.body)
+  // console.log("User Post Route req.body", req.body)
   Restaurant.create(req.body, (err, newRestaurant) => {
     if (err) {
       console.error("User Post Route Error: ", err)
       res.send(err)
     }
     else {
-      console.log("User Post Route newRestaurant", newRestaurant)
+      // console.log("User Post Route newRestaurant", newRestaurant)
       res.send(newRestaurant)
     }
   })

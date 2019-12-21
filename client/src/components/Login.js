@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react"
 import { Redirect } from "react-router-dom"
+import PropTypes from "prop-types"
 import SnackbarGreen from "./Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "./Atoms/SnackbarRed/SnackbarRed"
 import Button from "./Atoms/Button/Button"
@@ -7,6 +8,12 @@ import axios from "axios"
 import "../css/Login.css"
 
 class Login extends Component {
+
+   static propTypes = {
+      /* Function passed down from App.js, pass logged in username back to App.js
+         to be added to state */
+      updateLoggedInName: PropTypes.func
+   }
 
    constructor(props) {
       super(props)
@@ -100,6 +107,7 @@ class Login extends Component {
                   <form action="" method="get" onSubmit={this.handleSubmit}>
 
                      <div className="Login-row">
+
                         <span className="Login-inner-span">
                            <label className="Login-label">
                               Username:
@@ -108,6 +116,7 @@ class Login extends Component {
                               </div>
                            </label>
                         </span>
+
                         <span className="Login-inner-span">
                            <label className="Login-label">
                               Password:
@@ -116,6 +125,7 @@ class Login extends Component {
                               </div>
                            </label>
                         </span>
+                        
                      </div>
 
                      <Button label="Submit" />

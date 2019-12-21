@@ -1,0 +1,17 @@
+.BeerNew-label {
+   margin: 8px 16px;
+   text-align: start;
+}
+
+.BeerNew-span {
+   margin-left: 4px;
+}
+
+.BeerNew-input {
+   width: 250px;
+   margin-left: 0;
+}
+
+.BeerNew-input-image {
+   width: 826px;
+}
