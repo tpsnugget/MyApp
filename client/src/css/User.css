@@ -41,7 +41,7 @@
    margin-right: 1rem;
 }
 
-input {
+/* input {
    width: 250px;
    height: 35px;
    margin-left: 1rem;
@@ -60,4 +60,4 @@ input::placeholder {
    font-size: 1.2rem;
    padding-left: 0.5rem;
    color: lightgray;
-}
+} */

@@ -5,7 +5,7 @@ import "./Button.css"
 class Button extends Component{
 
    static propTypes = {
-      /*  */
+      /* Text used for the face of the button */
       label: PropTypes.string
    }
 

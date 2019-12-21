@@ -5,15 +5,6 @@ import "./InputTextTripleLength.css"
 class InputTextTripleLength extends Component {
 
    static propTypes = {
-      /* Used for CSS styling */
-      className: PropTypes.string,
-
-      /* Used for CSS styling */
-      spanClassName: PropTypes.string,
-
-      /* Used for CSS styling */
-      inputClassName: PropTypes.string,
-
       /* input type = text, password, ... */
       type: PropTypes.string,
 
@@ -36,15 +27,15 @@ class InputTextTripleLength extends Component {
 
    render() {
 
-      const { className, spanClassName, inputClassName, type, name, label } = this.props
+      const { type, name, label } = this.props
 
       return (
-         <label className={className}><span className={spanClassName}>{label}</span>
+         <label className="InputTextTripleLength-label"><span className="InputTextTripleLength-span">{label}</span>
             <div>
                <input
                   type={type}
                   name={name}
-                  className={inputClassName}
+                  className="InputTextTripleLength-input"
                   onChange={this.handleChangeHere}
                />
             </div>
