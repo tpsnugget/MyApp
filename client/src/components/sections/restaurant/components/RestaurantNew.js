@@ -2,6 +2,7 @@
 
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
+import PropTypes from "prop-types"
 import Cancel from "../../../../components/Cancel"
 import SnackbarGreen from "../../../Atoms/SnackbarGreen/SnackbarGreen"
 import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
@@ -14,6 +15,12 @@ import "../css/RestaurantNew.css"
 
 
 class RestaurantNew extends Component {
+
+   static propTypes = {
+      /* Passed down from App.js, gets added to database to identify which
+         user added the new restaurant to the db */
+      loggedInName: PropTypes.string
+   }
 
    constructor(props) {
       super(props)

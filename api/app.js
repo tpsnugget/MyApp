@@ -8,6 +8,7 @@ var createError = require('http-errors'),
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var beerRouter = require('./routes/beer');
+var beersRouter = require('./routes/beers');
 var recipeRouter = require('./routes/recipe');
 var restaurantRouter = require('./routes/restaurant');
 var rvRouter = require('./routes/rv');
@@ -28,6 +29,7 @@ app.use(cors())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/beer', beerRouter);
+app.use('/beers', beersRouter);
 app.use('/recipe', recipeRouter);
 app.use('/restaurant', restaurantRouter);
 app.use('/rv', rvRouter);

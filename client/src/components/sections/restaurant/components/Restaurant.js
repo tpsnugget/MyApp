@@ -1,9 +1,28 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
+
 import Sidebar from "../../../../components/Sidebar"
 import Mininavbar from "../../../../components/Mininavbar"
 import "../css/Restaurant.css"
 
 class Restaurant extends Component{
+
+   static propTypes = {
+      /* name comes from App.js, sent to Sidebar and Mininavbar */
+      name: PropTypes.string
+   }
+
+   constructor(props){
+      super(props)
+      this.state = {
+         chosenID: ""
+      }
+      this.handleClick = this.handleClick.bind(this)
+   }
+
+   handleClick(){
+
+   }
 
    render(){
 
