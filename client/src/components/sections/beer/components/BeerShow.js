@@ -6,7 +6,7 @@ class BeerShow extends Component {
 
    static propTypes = {
       /* Passed down from Beer.js
-         Used here to show all the data for one selected Beer */
+         Used here to show all the data for one selected BEER */
       data: PropTypes.object
    }
 
