@@ -10,6 +10,7 @@ import Button from "../../../Atoms/Button/Button"
 import InputText from "../../../Atoms/InputText/InputText"
 import InputTextDoubleLength from "../../../Atoms/InputTextDoubleLength/InputTextDoubleLength"
 import InputTextTripleLength from "../../../Atoms/InputTextTripleLength/InputTextTripleLength"
+import TextArea from "../../../Atoms/TextArea/TextArea"
 import axios from "axios"
 import "../css/RestaurantNew.css"
 
@@ -39,6 +40,7 @@ class RestaurantNew extends Component {
          rating: "",
          cuisine: "",
          price: "",
+         notes: "",
          snackBarGreenOpen: false,
          snackBarRedOpen: false,
          msg: "",
@@ -72,6 +74,7 @@ class RestaurantNew extends Component {
          rating: this.state.rating,
          cuisine: this.state.cuisine,
          price: this.state.price,
+         notes: this.state.notes,
          addedBy: this.props.username
       }
 
@@ -198,6 +201,10 @@ class RestaurantNew extends Component {
                            </select>
                         </div>
                      </label>
+                  </div>
+
+                  <div className="RestaurantNew-div-row">
+                     <TextArea rows="5" cols="89" label="Notes:" name="notes" placeholder="Enter Personal Notes Here" type="text" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RestaurantNew-div-row RestaurantNew-submit-button">

@@ -26,6 +26,7 @@ const restaurantSchema = new mongoose.Schema({
   rating: String,
   cuisine: String,
   price: String,
+  notes: String,
   addedBy: String
 })
 
