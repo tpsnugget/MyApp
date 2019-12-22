@@ -95,6 +95,7 @@ class RVNew extends Component {
          restrooms: this.state.restrooms,
          showers: this.state.showers,
          myRating: this.state.myRating,
+         notes: this.state.notes,
          addedBy: this.props.username
       }
 
@@ -200,7 +201,7 @@ class RVNew extends Component {
                         <div>
                            <select
                               type="text"
-                              name="sewer"
+                              name="sewerHookup"
                               className="RVNew-select"
                               onChange={this.handleChange}
                            >
@@ -253,8 +254,18 @@ class RVNew extends Component {
                               onChange={this.handleChange}
                            >
                               <option value="">Rate</option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
+                              <option value="over150">Over $150 / Night</option>
+                              <option value="over125">Over $125 / Night</option>
+                              <option value="over100">Over $100 / Night</option>
+                              <option value="over90">Over $90 / Night</option>
+                              <option value="over80">Over $80 / Night</option>
+                              <option value="over70">Over $70 / Night</option>
+                              <option value="over60">Over $60 / Night</option>
+                              <option value="over50">Over $50 / Night</option>
+                              <option value="over40">Over $40 / Night</option>
+                              <option value="over30">Over $30 / Night</option>
+                              <option value="over20">Over $20 / Night</option>
+                              <option value="over10">Over $10 / Night</option>
                            </select>
                         </div>
                      </label>
@@ -285,7 +296,7 @@ class RVNew extends Component {
                         <div>
                            <select
                               type="text"
-                              name="restroom"
+                              name="restrooms"
                               className="RVNew-select"
                               onChange={this.handleChange}
                            >
