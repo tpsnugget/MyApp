@@ -17,6 +17,7 @@ const recipeSchema = new mongoose.Schema({
   prepSteps: String,
   keywords: String,
   rating: String,
+  notes: String,
   addedBy: String
 })
 

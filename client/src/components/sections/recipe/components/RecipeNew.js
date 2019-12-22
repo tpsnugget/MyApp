@@ -36,6 +36,7 @@ class RecipeNew extends Component {
          prepSteps: "",
          keywords: "",
          rating: "",
+         notes: "",
          addedBy: "",
          snackBarGreenOpen: false,
          snackBarRedOpen: false,
@@ -67,6 +68,7 @@ class RecipeNew extends Component {
          prepSteps: this.state.prepSteps,
          keywords: this.state.keywords,
          rating: this.state.rating,
+         notes: this.state.notes,
          addedBy: this.props.username
       }
 
@@ -168,6 +170,10 @@ class RecipeNew extends Component {
                            </select>
                         </div>
                      </label>
+                  </div>
+
+                  <div className="RecipeNew-div-row">
+                     <TextArea rows="5" cols="89" label="Notes:" name="notes" placeholder="Enter Personal Notes Here" type="text" handleChange={this.handleChange} />
                   </div>
 
                   <div className="RecipeNew-div-row RecipeNew-submit-button">

@@ -10,6 +10,7 @@ import Button from "../../../Atoms/Button/Button"
 import InputText from "../../../Atoms/InputText/InputText"
 import InputTextDoubleLength from "../../../Atoms/InputTextDoubleLength/InputTextDoubleLength"
 import InputTextTripleLength from "../../../Atoms/InputTextTripleLength/InputTextTripleLength"
+import TextArea from "../../../Atoms/TextArea/TextArea"
 import axios from "axios"
 import "../css/BeerNew.css"
 
@@ -42,6 +43,7 @@ class BeerNew extends Component {
          abv: "",
          ibu: "",
          rating: "",
+         notes: "",
          snackBarGreenOpen: false,
          snackBarRedOpen: false,
          msg: "",
@@ -78,6 +80,7 @@ class BeerNew extends Component {
          abv: this.state.abv,
          ibu: this.state.ibu,
          rating: this.state.rating,
+         notes: this.state.notes,
          addedBy: this.props.username
       }
 
@@ -238,6 +241,10 @@ class BeerNew extends Component {
                      <InputText label="IBU:" type="text" name="ibu" handleChange={this.handleChange} />
                      <InputText label="Rating:" type="text" name="rating" handleChange={this.handleChange} />
 
+                  </div>
+
+                  <div className="BeerNew-div-row">
+                     <TextArea rows="5" cols="89" label="Notes:" name="notes" placeholder="Enter Personal Notes Here" type="text" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row BeerNew-submit-button">
