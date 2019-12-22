@@ -12,6 +12,7 @@ import RecipeNew from "./components/sections/recipe/components/RecipeNew"
 import Restaurant from "./components/sections/restaurant/components/Restaurant"
 import RestaurantNew from "./components/sections/restaurant/components/RestaurantNew"
 import RV from "./components/sections/rv/components/RV"
+import RVNew from "./components/sections/rv/components/RVNew"
 import './css/App.css';
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
       <div className="App">
         <Navbar isLoggedIn={isLoggedIn} loggedInName={loggedInName} logout={this.logout} />
         <Switch>
+          
           <Route exact path="/landing">
             {isLoggedIn && <Landing />} 
           </Route>
@@ -82,6 +84,9 @@ class App extends Component {
 
           <Route exact path="/rv">
             {isLoggedIn && <RV name="RV"/>}
+          </Route>
+          <Route exact path="/rv/new">
+            {isLoggedIn && <RVNew username={loggedInName}/>}
           </Route>
 
         </Switch>
