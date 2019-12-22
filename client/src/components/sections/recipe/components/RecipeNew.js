@@ -150,7 +150,7 @@ class RecipeNew extends Component {
 
                   <div className="RecipeNew-div-row">
 
-                     <label className="InputText-label"><span className="InputText-span">Beer Type:</span>
+                     <label className="InputText-label"><span className="InputText-span">Recipe Rating:</span>
                         <div>
                            <select
                               type="text"
