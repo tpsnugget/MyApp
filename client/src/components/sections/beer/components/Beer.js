@@ -61,10 +61,6 @@ class Beer extends Component {
       const { addedBy } = this.state.data
       const { loggedInName, name } = this.props
 
-
-      // console.log("Beer Component, addedBy: ", addedBy)
-      // console.log("Beer Component, loggedInName: ", loggedInName)
-
       const allowedToModifySelection = (addedBy === loggedInName ? true : false)
 
       return (

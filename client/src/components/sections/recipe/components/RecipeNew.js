@@ -9,6 +9,7 @@ import SnackbarRed from "../../../Atoms/SnackbarRed/SnackbarRed"
 import Button from "../../../Atoms/Button/Button"
 import InputText from "../../../Atoms/InputText/InputText"
 import TextArea from "../../../Atoms/TextArea/TextArea"
+import InputTextDoubleLength from "../../../Atoms/InputTextDoubleLength/InputTextDoubleLength"
 import InputTextTripleLength from "../../../Atoms/InputTextTripleLength/InputTextTripleLength"
 import axios from "axios"
 import "../css/RecipeNew.css"
@@ -117,7 +118,7 @@ class RecipeNew extends Component {
                   onSubmit={this.handleSubmit} >
 
                   <div className="RecipeNew-div-row">
-                     <InputText label="Recipe Name:" name="name" placeholder="Recipe Name" type="text" handleChange={this.handleChange} />
+                     <InputTextDoubleLength label="Recipe Name:" name="name" placeholder="Recipe Name" type="text" handleChange={this.handleChange} />
                      <InputText label="Created By:" name="creator" placeholder="Created By" type="text" handleChange={this.handleChange} />
                   </div>
 

@@ -134,7 +134,7 @@ class BeerNew extends Component {
                   </div>
 
                   <div className="BeerNew-div-row">
-                     <InputTextDoubleLength className="InputTextDoubleLength-label" spanClassName="InputTextDoubleLength-span" label="Street Address:" type="text" name="streetAddress" inputClassName="InputTextDoubleLength-input-address" handleChange={this.handleChange} />
+                     <InputTextDoubleLength label="Street Address:" type="text" name="streetAddress" handleChange={this.handleChange} />
                   </div>
 
                   <div className="BeerNew-div-row">
