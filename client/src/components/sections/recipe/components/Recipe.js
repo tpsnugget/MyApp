@@ -1,11 +1,10 @@
-/* RECiPE LANDING PAGE */
+/* RECIPE LANDING PAGE */
 
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import Sidebar from "../../../../components/Sidebar"
 import Mininavbar from "../../../../components/Mininavbar"
 import CancelLink from "../../../Atoms/CancelLink/CancelLink"
-
 import "../css/Recipe.css"
 
 

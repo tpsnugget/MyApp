@@ -12,7 +12,10 @@ class InputTextDoubleLength extends Component {
       name: PropTypes.string,
 
       /* label is what is displayed on top of the input box for the user */
-      label: PropTypes.string
+      label: PropTypes.string,
+
+            /* placeholder is what is displayed inside of the textarea input box for the user */
+            placeholder: PropTypes.string
    }
 
    constructor(props){
@@ -27,7 +30,7 @@ class InputTextDoubleLength extends Component {
 
    render() {
 
-      const { type, name, label } = this.props
+      const { type, name, label, placeholder } = this.props
 
       return (
          <label className="InputTextDoubleLength-label"><span className="InputTextDoubleLength-span">{label}</span>
@@ -36,6 +39,7 @@ class InputTextDoubleLength extends Component {
                   type={type}
                   name={name}
                   className="InputTextDoubleLength-input"
+                  placeholder={placeholder}
                   onChange={this.handleChangeHere}
                />
             </div>

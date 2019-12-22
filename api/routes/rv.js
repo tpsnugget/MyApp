@@ -2,61 +2,69 @@ var express = require('express'),
   mongoose = require("mongoose")
 var router = express.Router();
 
-// const userSchema = new mongoose.Schema({
-//   first: {
-//     type: String,
-//     required: true
-//   },
-//   last: {
-//     type: String,
-//     required: true
-//   },
-//   username: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   email: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   password: {
-//     type: String,
-//     required: true
-//   }
-// })
+const rvSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  streetAddress: String,
+  city: String,
+  state: String,
+  zip: String,
+  phone: String,
+  latitude: String,
+  longitude: String,
+  image: String,
+  website: String,
+  reviewWebsite: String,
+  reviewWebsiteRating: String,
+  siteId: String,
+  electricalHookup: String,
+  water: bool,
+  sewerHookup: bool,
+  dumpStation: bool,
+  pullThroughSite: book,
+  rate: String,
+  petsAllowed: bool,
+  petRestrictions: String,
+  restrooms: bool,
+  showers: bool,
+  myRating: String,
+  notes: String,
+  addedBy: String
+})
 
-// const User = mongoose.model("User", userSchema)
+const RV = mongoose.model("RV", rvSchema)
 
-// /* Get A User */
-// router.get('/', function (req, res) {
-//   console.log("Get req.query: ", req.query)
-//   User.findOne(req.query, function (err, foundUser) {
-//     if (err) {
-//       console.error("User Get Route Error: ", err)
-//       res.send(err)
-//     }
-//     else {
-//       console.log("User Get Route foundUser", foundUser)
-//       res.send(foundUser)
-//     }
-//   })
-// });
+/* Get RV */
+router.get('/', function (req, res) {
+  console.log("Get RV req.query: ", req.query)
+  // RV.find(req.query, {name: 1, image: 1}, function (err, foundRV) {
+  RV.find(req.query, function (err, foundRV) {
+    if (err) {
+      console.error("User Get Route Error: ", err)
+      res.send(err)
+    }
+    else {
+      console.log("User Get Route foundUser", foundRV)
+      res.send(foundRV)
+    }
+  })
+});
 
-// /* Add A New User */
-// router.post("/", function (req, res) {
-//   console.log("User Post Route req.body", req.body)
-//   User.create(req.body, (err, newUser) => {
-//     if (err) {
-//       console.error("User Post Route Error: ", err)
-//       res.send(err)
-//     }
-//     else {
-//       console.log("User Post Route newUser", newUser)
-//       res.send(newUser)
-//     }
-//   })
-// })
+/* Add A New RV */
+router.post("/", function (req, res) {
+  // console.log("User Post Route req.body", req.body)
+  RV.create(req.body, (err, newRV) => {
+    if (err) {
+      console.error("User Post Route Error: ", err)
+      res.send(err)
+    }
+    else {
+      console.log("User Post Route newRV", newRV)
+      res.send(newRV)
+    }
+  })
+})
 
 module.exports = router;
