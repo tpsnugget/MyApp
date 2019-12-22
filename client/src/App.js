@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Landing from "./components/Landing"
-import New from "./components/sections/restaurant/components/New"
 import User from "./components/User"
 import Login from "./components/Login"
 import Beer from "./components/sections/beer/components/Beer"
@@ -49,9 +48,6 @@ class App extends Component {
           
           <Route exact path="/landing">
             {isLoggedIn && <Landing />} 
-          </Route>
-          <Route exact path="/new">
-            {isLoggedIn && <New />}
           </Route>
           <Route exact path="/login">
             <Login updateLoggedInName={this.updateLoggedInName} />
