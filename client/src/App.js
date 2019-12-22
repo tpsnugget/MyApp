@@ -65,21 +65,21 @@ class App extends Component {
 
 
           <Route exact path="/recipe">
-            {isLoggedIn && <Recipe name="Recipe"/>}
+            {isLoggedIn && <Recipe name="Recipe" loggedInName={loggedInName}/>}
           </Route>
           <Route exact path="/recipe/new">
             {isLoggedIn && <RecipeNew username={loggedInName}/>}
           </Route>
 
           <Route exact path="/restaurant">
-            {isLoggedIn && <Restaurant name="Restaurant"/>}
+            {isLoggedIn && <Restaurant name="Restaurant" loggedInName={loggedInName}/>}
           </Route>
           <Route exact path="/restaurant/new">
             {isLoggedIn && <RestaurantNew username={loggedInName}/>}
           </Route>
 
           <Route exact path="/rv">
-            {isLoggedIn && <RV name="RV"/>}
+            {isLoggedIn && <RV name="RV" loggedInName={loggedInName}/>}
           </Route>
           <Route exact path="/rv/new">
             {isLoggedIn && <RVNew username={loggedInName}/>}
